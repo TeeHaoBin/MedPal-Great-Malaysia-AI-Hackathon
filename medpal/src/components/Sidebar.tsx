@@ -239,7 +239,7 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
                   </div>
                   <div className="flex items-center space-x-1">
                     {session.hasSensitiveData && (
-                      <Shield className="w-4 h-4 text-amber-500" title="Contains sensitive PHI" />
+                      <Shield className="w-4 h-4 text-amber-500" />
                     )}
                     <Calendar className="w-4 h-4 text-gray-400" />
                     <button

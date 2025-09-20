@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Send, Upload, ScanText } from 'lucide-react';
+import { Send, Upload } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ChatMessage {
@@ -27,7 +27,7 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
   const [loading, setLoading] = useState(false);
   const [currentSessionId, setCurrentSessionId] = useState<string>('');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [isProcessingOCR, setIsProcessingOCR] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [isDragOver, setIsDragOver] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -122,11 +122,12 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
   };
 
   const handleSend = async () => {
-    if (!inputValue.trim()) return;
+    if (!inputValue.trim() && !selectedFile) return;
 
     const userMessage = inputValue;
     setInputValue('');
     setLoading(true);
+    setIsUploading(true);
 
     // Create new session if none exists
     let sessionId = currentSessionId;
@@ -135,18 +136,61 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
       setCurrentSessionId(sessionId);
     }
 
-    // Send user message
-    const userMessageSent = await sendMessage(userMessage, 'User');
+    try {
+      let fileUploadResult = null;
 
-    if (userMessageSent) {
-      // Generate and send AI response after a brief delay
-      setTimeout(async () => {
-        const aiResponse = generateAIResponse(userMessage);
-        await sendMessage(aiResponse, 'AI');
+      // Upload file to S3 if there's a selected file
+      if (selectedFile) {
+        fileUploadResult = await uploadFileToS3(selectedFile);
+
+        if (!fileUploadResult.success) {
+          alert(`File upload failed: ${fileUploadResult.error}`);
+          setLoading(false);
+          setIsUploading(false);
+          return;
+        }
+      }
+
+      // Prepare user message
+      let messageText = userMessage;
+      if (selectedFile && fileUploadResult) {
+        messageText = userMessage
+          ? `${userMessage}\n\n📎 Attached file: ${selectedFile.name} (${fileUploadResult.fileUrl})`
+          : `📎 Uploaded file: ${selectedFile.name} (${fileUploadResult.fileUrl})`;
+      }
+
+      // Send user message
+      const userMessageSent = await sendMessage(messageText, 'User');
+
+      if (userMessageSent) {
+        // Clear the selected file after successful send
+        if (selectedFile) {
+          setSelectedFile(null);
+          if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+          }
+        }
+
+        // Generate and send AI response after a brief delay
+        setTimeout(async () => {
+          let aiResponse;
+          if (fileUploadResult) {
+            aiResponse = `This is an AI response: I received your file "${selectedFile?.name || 'unknown'}" and it has been successfully uploaded to S3. The file is now available at: ${fileUploadResult.fileUrl}\n\nI can help you with any questions about the uploaded file or assist with other medical inquiries.`;
+          } else {
+            aiResponse = generateAIResponse(userMessage);
+          }
+          await sendMessage(aiResponse, 'AI');
+          setLoading(false);
+        }, 1000);
+      } else {
         setLoading(false);
-      }, 1000);
-    } else {
+      }
+    } catch (error) {
+      console.error('Send message error:', error);
+      alert('Failed to send message. Please try again.');
       setLoading(false);
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -168,41 +212,21 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
     }
   };
 
-  const handleOCR = async () => {
-    if (!selectedFile) {
-      alert('Please select a file first.');
-      return;
-    }
-
-    setIsProcessingOCR(true);
-
+  const uploadFileToS3 = async (file: File) => {
     try {
-      // Simulate OCR processing (replace with actual OCR service)
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const formData = new FormData();
+      formData.append('file', file);
 
-      // Mock OCR result
-      const ocrText = `This is an AI response: I've processed your uploaded ${selectedFile.type.includes('pdf') ? 'PDF document' : 'image'}. Here's what I found:
+      const response = await fetch('/api/upload-s3', {
+        method: 'POST',
+        body: formData,
+      });
 
-Sample extracted text from the document. In a real implementation, this would be the actual OCR results from your document.
-
-Please note: This is a simulated OCR result. You would integrate with an actual OCR service like AWS Textract, Google Vision API, or Tesseract.js for real text extraction.`;
-
-      // Send OCR result as a message
-      if (currentSessionId || inputValue.trim()) {
-        await sendMessage(`Uploaded file: ${selectedFile.name}`, 'User');
-        await sendMessage(ocrText, 'AI');
-      }
-
-      // Clear the selected file
-      setSelectedFile(null);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = '';
-      }
+      const data = await response.json();
+      return data;
     } catch (error) {
-      console.error('OCR processing failed:', error);
-      alert('OCR processing failed. Please try again.');
-    } finally {
-      setIsProcessingOCR(false);
+      console.error('Upload failed:', error);
+      throw error;
     }
   };
 
@@ -363,26 +387,20 @@ Please note: This is a simulated OCR result. You would integrate with an actual 
                   <span className="text-xs text-blue-600">
                     ({(selectedFile.size / 1024).toFixed(1)} KB)
                   </span>
+                  <span className="text-xs text-green-600 font-medium">
+                    Ready to send
+                  </span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={handleOCR}
-                    disabled={isProcessingOCR}
-                    className="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1"
-                  >
-                    <ScanText className="w-3 h-3" />
-                    <span>{isProcessingOCR ? 'Processing...' : 'Extract Text'}</span>
-                  </button>
-                  <button
-                    onClick={() => {
-                      setSelectedFile(null);
-                      if (fileInputRef.current) fileInputRef.current.value = '';
-                    }}
-                    className="text-blue-600 hover:text-blue-800 p-1"
-                  >
-                    ✕
-                  </button>
-                </div>
+                <button
+                  onClick={() => {
+                    setSelectedFile(null);
+                    if (fileInputRef.current) fileInputRef.current.value = '';
+                  }}
+                  className="text-blue-600 hover:text-blue-800 p-1"
+                  title="Remove file"
+                >
+                  ✕
+                </button>
               </div>
             </div>
           )}
@@ -417,12 +435,12 @@ Please note: This is a simulated OCR result. You would integrate with an actual 
                 placeholder="Message MedPal..."
                 className="flex-1 px-3 py-2 bg-transparent border-0 resize-none focus:outline-none text-sm min-h-[40px] max-h-32"
                 onKeyPress={(e) => {
-                  if (e.key === 'Enter' && !e.shiftKey && !loading && !isProcessingOCR) {
+                  if (e.key === 'Enter' && !e.shiftKey && !loading && !isUploading) {
                     e.preventDefault();
                     handleSend();
                   }
                 }}
-                disabled={loading || isProcessingOCR}
+                disabled={loading || isUploading}
                 rows={1}
                 style={{
                   height: 'auto',
@@ -436,7 +454,7 @@ Please note: This is a simulated OCR result. You would integrate with an actual 
               />
               <button
                 onClick={handleSend}
-                disabled={loading || isProcessingOCR || !inputValue.trim()}
+                disabled={loading || isUploading || (!inputValue.trim() && !selectedFile)}
                 className="p-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="w-4 h-4" />
@@ -448,7 +466,7 @@ Please note: This is a simulated OCR result. You would integrate with an actual 
           {currentSessionId && (
             <div className="mt-2 text-xs text-gray-400 text-center">
               Session: {currentSessionId.slice(-6)}
-              {selectedFile && <span> • File ready for OCR processing</span>}
+              {selectedFile && <span> • File will be uploaded when sent</span>}
             </div>
           )}
         </div>
