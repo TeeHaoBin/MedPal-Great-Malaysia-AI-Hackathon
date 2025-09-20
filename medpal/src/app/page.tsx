@@ -18,6 +18,10 @@ export default function Home() {
     setActiveSessionId(sessionId);
     setSidebarOpen(false); // Close sidebar on mobile after selection
   };
+
+  const handleSessionDeleted = () => {
+    setActiveSessionId(undefined); // Clear active session when deleted
+  };
   return (
     <div className="min-h-screen bg-gray-50">
       <Header onSidebarToggle={handleSidebarToggle} />
@@ -28,6 +32,7 @@ export default function Home() {
           onToggle={handleSidebarToggle}
           onSessionSelect={handleSessionSelect}
           activeSessionId={activeSessionId}
+          onSessionDeleted={handleSessionDeleted}
         />
 
         <main className="flex-1 md:ml-80">

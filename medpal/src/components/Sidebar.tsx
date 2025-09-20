@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { MessageSquare, Calendar, User, Shield, ChevronRight, Plus } from 'lucide-react';
+import { MessageSquare, Calendar, User, Shield, ChevronRight, Plus, Trash2 } from 'lucide-react';
 
 interface ChatSession {
   sessionId: string;
@@ -16,9 +16,10 @@ interface SidebarProps {
   onToggle: () => void;
   onSessionSelect: (sessionId: string) => void;
   activeSessionId?: string;
+  onSessionDeleted?: () => void;
 }
 
-export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessionId }: SidebarProps) {
+export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessionId, onSessionDeleted }: SidebarProps) {
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -122,6 +123,35 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
       console.error('Error creating conversation:', error);
     }
   };
+
+  const deleteSession = async (sessionId: string, event: React.MouseEvent) => {
+    event.stopPropagation(); // Prevent session selection when clicking delete
+
+    if (!confirm('Are you sure you want to delete this chat session? This action cannot be undone.')) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/delete-session?sessionId=${sessionId}`, {
+        method: 'DELETE',
+      });
+
+      const data = await response.json();
+      if (data.status === 'success') {
+        await fetchSessions(); // Refresh sessions
+        // If the deleted session was active, clear it
+        if (activeSessionId === sessionId && onSessionDeleted) {
+          onSessionDeleted();
+        }
+      } else {
+        console.error('Failed to delete session:', data.error);
+        alert('Failed to delete session. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error deleting session:', error);
+      alert('Error deleting session. Please try again.');
+    }
+  };
   const formatTimestamp = (timestamp: string) => {
     const date = new Date(timestamp);
     const now = new Date();
@@ -193,7 +223,7 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
               <div
                 key={session.sessionId}
                 onClick={() => onSessionSelect(session.sessionId)}
-                className={`p-3 rounded-lg mb-2 cursor-pointer transition-colors ${
+                className={`p-3 rounded-lg mb-2 cursor-pointer transition-colors group ${
                   activeSessionId === session.sessionId
                     ? 'bg-blue-50 border-blue-200 border'
                     : 'hover:bg-gray-50 border border-transparent'
@@ -212,6 +242,13 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
                       <Shield className="w-3 h-3 text-amber-500" title="Contains sensitive PHI" />
                     )}
                     <Calendar className="w-3 h-3 text-gray-400" />
+                    <button
+                      onClick={(e) => deleteSession(session.sessionId, e)}
+                      className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 rounded transition-all"
+                      title="Delete session"
+                    >
+                      <Trash2 className="w-3 h-3 text-red-500 hover:text-red-700" />
+                    </button>
                   </div>
                 </div>
 

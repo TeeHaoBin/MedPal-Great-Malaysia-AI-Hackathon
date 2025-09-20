@@ -1,5 +1,5 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import { DynamoDBDocumentClient, ScanCommand, PutCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
+import { DynamoDBDocumentClient, ScanCommand, PutCommand, QueryCommand, DeleteCommand } from '@aws-sdk/lib-dynamodb';
 
 const client = new DynamoDBClient({
   region: process.env.AWS_REGION!,
@@ -135,6 +135,47 @@ export const getChatHistory = async (sessionId: string) => {
       message: 'Failed to get chat history',
       error: error instanceof Error ? error.message : 'Unknown error',
       messages: []
+    };
+  }
+};
+
+export const deleteChatSession = async (sessionId: string) => {
+  try {
+    // First, get all messages for this session
+    const historyResult = await getChatHistory(sessionId);
+
+    if (!historyResult.success) {
+      return {
+        success: false,
+        message: 'Failed to retrieve session messages for deletion',
+        error: historyResult.error
+      };
+    }
+
+    // Delete each message in the session
+    const deletePromises = historyResult.messages.map(async (message) => {
+      const deleteCommand = new DeleteCommand({
+        TableName: process.env.DYNAMODB_TABLE_NAME!,
+        Key: {
+          ChatSessionId: message.ChatSessionId,
+          Timestamp: message.Timestamp,
+        },
+      });
+
+      return dynamoDb.send(deleteCommand);
+    });
+
+    await Promise.all(deletePromises);
+
+    return {
+      success: true,
+      message: `Successfully deleted ${historyResult.messages.length} messages from session ${sessionId}`
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: 'Failed to delete chat session',
+      error: error instanceof Error ? error.message : 'Unknown error'
     };
   }
 };

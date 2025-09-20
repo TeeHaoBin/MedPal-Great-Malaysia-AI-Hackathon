@@ -33,9 +33,8 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
       setCurrentSessionId(activeSessionId);
       fetchMessages(activeSessionId);
     } else {
-      // Create a new session ID if none is provided
-      const newSessionId = `session_${Date.now()}`;
-      setCurrentSessionId(newSessionId);
+      // Don't auto-create session, wait for user to send first message
+      setCurrentSessionId('');
       setMessages([]);
     }
   }, [activeSessionId]);
@@ -69,7 +68,7 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
   };
 
   const sendMessage = async (messageText: string, sender: 'User' | 'AI' = 'User') => {
-    if (!messageText.trim()) return;
+    if (!messageText.trim() || !currentSessionId) return;
 
     const message: ChatMessage = {
       ChatSessionId: currentSessionId,
@@ -125,6 +124,13 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
     setInputValue('');
     setLoading(true);
 
+    // Create new session if none exists
+    let sessionId = currentSessionId;
+    if (!sessionId) {
+      sessionId = `session_${Date.now()}`;
+      setCurrentSessionId(sessionId);
+    }
+
     // Send user message
     const userMessageSent = await sendMessage(userMessage, 'User');
 
@@ -156,7 +162,9 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
         ) : messages.length === 0 ? (
           <div className="text-center text-gray-500 py-8">
             <p>No messages yet. Start a conversation!</p>
-            <p className="text-sm mt-2">Session ID: {currentSessionId.slice(-6)}</p>
+            {currentSessionId && (
+              <p className="text-sm mt-2">Session ID: {currentSessionId.slice(-6)}</p>
+            )}
           </div>
         ) : (
           <AnimatePresence>
