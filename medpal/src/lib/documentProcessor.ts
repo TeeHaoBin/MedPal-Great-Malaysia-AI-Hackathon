@@ -41,7 +41,7 @@ This is a placeholder showing how medical content will be formatted:
 > **Important:** This is a critical medical warning that will be highlighted
 
 ### Sample Medication Information
-- **Drug Name:** `Medication XYZ`
+- **Drug Name:** \`Medication XYZ\`
 - **Dosage:** \`50mg twice daily\`
 - **Duration:** 2 weeks
 
