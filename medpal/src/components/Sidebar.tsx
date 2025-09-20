@@ -188,14 +188,14 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
         <div className="p-4 border-b border-gray-200">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold text-gray-900 flex items-center">
-              <MessageSquare className="w-5 h-5 mr-2" />
+              <MessageSquare className="w-6 h-6 mr-2" />
               Chat Sessions
             </h2>
             <button
               onClick={onToggle}
               className="md:hidden p-1 hover:bg-gray-100 rounded"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -209,7 +209,7 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
               </div>
             ) : sessions.length === 0 ? (
               <div className="text-center py-8 text-gray-500">
-                <MessageSquare className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                <MessageSquare className="w-10 h-10 mx-auto mb-2 opacity-50" />
                 <p>No chat sessions yet</p>
                 <button
                   onClick={createRealChatConversation}
@@ -239,15 +239,15 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
                   </div>
                   <div className="flex items-center space-x-1">
                     {session.hasSensitiveData && (
-                      <Shield className="w-3 h-3 text-amber-500" title="Contains sensitive PHI" />
+                      <Shield className="w-4 h-4 text-amber-500" title="Contains sensitive PHI" />
                     )}
-                    <Calendar className="w-3 h-3 text-gray-400" />
+                    <Calendar className="w-4 h-4 text-gray-400" />
                     <button
                       onClick={(e) => deleteSession(session.sessionId, e)}
                       className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 rounded transition-all"
                       title="Delete session"
                     >
-                      <Trash2 className="w-3 h-3 text-red-500 hover:text-red-700" />
+                      <Trash2 className="w-4 h-4 text-red-500 hover:text-red-700" />
                     </button>
                   </div>
                 </div>
@@ -263,7 +263,7 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
                 <div className="flex items-center justify-between text-xs text-gray-500">
                   <div className="flex items-center space-x-3">
                     <span className="flex items-center">
-                      <MessageSquare className="w-3 h-3 mr-1" />
+                      <MessageSquare className="w-4 h-4 mr-1" />
                       {session.messageCount}
                     </span>
                     <span>{formatTimestamp(session.timestamp)}</span>
@@ -281,7 +281,7 @@ export default function Sidebar({ isOpen, onToggle, onSessionSelect, activeSessi
             onClick={createRealChatConversation}
             className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium flex items-center justify-center"
           >
-            <Plus className="w-4 h-4 mr-2" />
+            <Plus className="w-5 h-5 mr-2" />
             New Chat Session
           </button>
         </div>
