@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Send, Upload } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import MessageContent from './MessageContent';
 
 interface ChatMessage {
   ChatSessionId: string;
@@ -111,14 +112,56 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
     }
   };
 
-  const generateAIResponse = (userMessage: string): string => {
-    const responses = [
-      `This is an AI response: Thank you for your question about "${userMessage.substring(0, 30)}...". I'm here to help with medical information. Please remember to consult healthcare professionals for personalized advice.`,
-      `This is an AI response: I understand you're asking about "${userMessage.substring(0, 30)}...". Based on general medical knowledge, I can provide information, but please seek professional medical advice for your specific situation.`,
-      `This is an AI response: Regarding your query "${userMessage.substring(0, 30)}...", I can offer general guidance. However, it's important to discuss your specific concerns with a qualified healthcare provider.`
-    ];
+  const generateAIResponse = async (userMessage: string, fileUrl?: string, documentData?: any): Promise<string> => {
+    try {
+      // Get conversation history for context
+      const conversationHistory = messages.map(msg => ({
+        role: msg.Sender === 'User' ? 'User' : 'AI',
+        content: msg.Message
+      }));
 
-    return responses[Math.floor(Math.random() * responses.length)];
+      // Add the current user message
+      conversationHistory.push({
+        role: 'User',
+        content: userMessage
+      });
+
+      // Prepare file context if there's a file
+      let fileContext = undefined;
+      if (fileUrl && documentData) {
+        fileContext = `User has uploaded a file: ${fileUrl}.
+
+Document Analysis:
+${documentData.documentProcessing?.extractedText || 'File uploaded but text extraction not available.'}
+
+Please provide relevant medical analysis and insights based on this document.`;
+      } else if (fileUrl) {
+        fileContext = `User has uploaded a file: ${fileUrl}. Please acknowledge the file and provide relevant medical analysis if applicable.`;
+      }
+
+      const response = await fetch('/api/bedrock-chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: conversationHistory,
+          fileContext
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        return data.response;
+      } else {
+        console.error('Bedrock API error:', data.error);
+        return `I apologize, but I'm experiencing technical difficulties. Error: ${data.error}. Please try again or consult with a healthcare professional directly.`;
+      }
+    } catch (error) {
+      console.error('Error calling Bedrock API:', error);
+      return 'I apologize, but I\'m currently unable to respond due to technical issues. Please try again later or consult with a healthcare professional.';
+    }
   };
 
   const handleSend = async () => {
@@ -171,16 +214,21 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
           }
         }
 
-        // Generate and send AI response after a brief delay
+        // Generate and send AI response
         setTimeout(async () => {
-          let aiResponse;
-          if (fileUploadResult) {
-            aiResponse = `This is an AI response: I received your file "${selectedFile?.name || 'unknown'}" and it has been successfully uploaded to S3. The file is now available at: ${fileUploadResult.fileUrl}\n\nI can help you with any questions about the uploaded file or assist with other medical inquiries.`;
-          } else {
-            aiResponse = generateAIResponse(userMessage);
+          try {
+            const aiResponse = await generateAIResponse(
+              userMessage,
+              fileUploadResult?.fileUrl,
+              fileUploadResult
+            );
+            await sendMessage(aiResponse, 'AI');
+          } catch (error) {
+            console.error('Error generating AI response:', error);
+            await sendMessage('I apologize, but I encountered an error while processing your request. Please try again.', 'AI');
+          } finally {
+            setLoading(false);
           }
-          await sendMessage(aiResponse, 'AI');
-          setLoading(false);
         }, 1000);
       } else {
         setLoading(false);
@@ -319,9 +367,12 @@ export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
                         <div className={`px-4 py-3 rounded-2xl ${
                           message.Sender === 'User'
                             ? 'bg-blue-500 text-white'
-                            : 'bg-gray-100 text-gray-900'
+                            : 'bg-gray-50 text-gray-900 border border-gray-200'
                         }`}>
-                          <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.Message}</p>
+                          <MessageContent
+                            content={message.Message}
+                            isAI={message.Sender === 'AI'}
+                          />
                           {message.Metadata?.IsSensitive && (
                             <span className="inline-block mt-2 text-xs bg-amber-200 text-amber-800 px-2 py-1 rounded">
                               PHI

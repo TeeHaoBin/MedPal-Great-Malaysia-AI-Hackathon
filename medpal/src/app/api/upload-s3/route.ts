@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PutObjectCommand } from '@aws-sdk/client-s3';
 import { s3Client, S3_BUCKET_NAME } from '@/lib/s3';
+import { processDocument } from '@/lib/documentProcessor';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(request: NextRequest) {
@@ -59,6 +60,9 @@ export async function POST(request: NextRequest) {
     // Construct file URL
     const fileUrl = `https://${S3_BUCKET_NAME}.s3.${process.env.AWS_REGION || 'us-east-1'}.amazonaws.com/${key}`;
 
+    // Process document for text extraction (if applicable)
+    const documentResult = await processDocument(fileUrl, file.name);
+
     // Return success response
     return NextResponse.json({
       success: true,
@@ -68,6 +72,7 @@ export async function POST(request: NextRequest) {
       fileType: file.type,
       fileUrl: fileUrl,
       s3Key: key,
+      documentProcessing: documentResult,
     });
   } catch (error) {
     console.error('S3 upload error:', error);
