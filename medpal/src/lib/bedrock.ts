@@ -45,7 +45,7 @@ export const invokeBedrock = async (
 - Use numbered lists (1., 2., 3.) for step-by-step instructions or prioritized information
 - Use > blockquotes for important warnings or critical medical advice
 - Structure your responses with clear headings using ## or ###
-- Use `inline code` for specific measurements, dosages, or technical terms
+- Use \`inline code\` for specific measurements, dosages, or technical terms
 
 **Content Guidelines:**
 - Always recommend consulting healthcare professionals for specific medical advice
