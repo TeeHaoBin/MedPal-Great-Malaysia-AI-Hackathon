@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PutObjectCommand } from '@aws-sdk/client-s3';
 import { s3Client, S3_BUCKET_NAME } from '@/lib/s3';
 import { processDocument } from '@/lib/documentProcessor';
+import { saveOCRResult, dynamoDb } from '@/lib/dynamodb';
+import { ScanCommand } from '@aws-sdk/lib-dynamodb';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(request: NextRequest) {
@@ -60,10 +62,41 @@ export async function POST(request: NextRequest) {
     // Construct file URL
     const fileUrl = `https://${S3_BUCKET_NAME}.s3.${process.env.AWS_REGION || 'us-east-1'}.amazonaws.com/${key}`;
 
+
+
     // Process document for text extraction (if applicable)
     const documentResult = await processDocument(fileUrl, file.name);
 
-    // Return success response
+    // Save OCR result to DynamoDB (OCR-Text-Extraction-Table-Test)
+    let ocrItemId = uuidv4();
+    if (documentResult.success && documentResult.extractedText) {
+      await saveOCRResult({
+        id: ocrItemId,
+        fileName: file.name,
+        fileUrl: fileUrl,
+        extractedText: documentResult.extractedText,
+        uploadedAt: new Date().toISOString(),
+        s3Key: key,
+        documentType: documentResult.documentType,
+      });
+    }
+
+    // Fetch the latest item from OCR-Text-Extraction-Table-Test
+    let latestOCRItem = null;
+    try {
+      const scanResult = await dynamoDb.send(new ScanCommand({
+        TableName: 'OCR-Text-Extraction-Table-Test',
+        Limit: 1,
+        // Optionally, you can add a filter for fileName or s3Key if you want to be more specific
+      }));
+      if (scanResult.Items && scanResult.Items.length > 0) {
+        latestOCRItem = scanResult.Items[0];
+      }
+    } catch (err) {
+      console.error('Failed to fetch latest OCR item:', err);
+    }
+
+    // Return success response with documentProcessing from latest OCR table item
     return NextResponse.json({
       success: true,
       message: 'File uploaded successfully',
@@ -72,7 +105,9 @@ export async function POST(request: NextRequest) {
       fileType: file.type,
       fileUrl: fileUrl,
       s3Key: key,
-      documentProcessing: documentResult,
+      documentProcessing: latestOCRItem
+        ? { success: true, extractedText: latestOCRItem.extractedText, documentType: latestOCRItem.documentType }
+        : { success: false, error: 'No OCR result found' },
     });
   } catch (error) {
     console.error('S3 upload error:', error);

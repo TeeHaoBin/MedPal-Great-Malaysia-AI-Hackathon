@@ -73,11 +73,12 @@ export default function ChatInterface({ activeSessionId, onSidebarToggle }: Chat
     }
   };
 
-  const sendMessage = async (messageText: string, sender: 'User' | 'AI' = 'User') => {
-    if (!messageText.trim() || !currentSessionId) return;
+  const sendMessage = async (messageText: string, sender: 'User' | 'AI' = 'User', sessionIdOverride?: string) => {
+    const sessionIdToUse = sessionIdOverride || currentSessionId;
+    if (!messageText.trim() || !sessionIdToUse) return;
 
     const message: ChatMessage = {
-      ChatSessionId: currentSessionId,
+      ChatSessionId: sessionIdToUse,
       Timestamp: new Date().toISOString(),
       MessageId: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       Sender: sender,
@@ -100,7 +101,6 @@ export default function ChatInterface({ activeSessionId, onSidebarToggle }: Chat
 
       const data = await response.json();
       if (data.status === 'success') {
-        // Add message to local state immediately for better UX
         setMessages(prev => [...prev, message]);
         return true;
       } else {
@@ -175,9 +175,11 @@ Please provide relevant medical analysis and insights based on this document.`;
 
     // Create new session if none exists
     let sessionId = currentSessionId;
+    let isNewSession = false;
     if (!sessionId) {
       sessionId = `session_${Date.now()}`;
       setCurrentSessionId(sessionId);
+      isNewSession = true;
     }
 
     try {
@@ -203,8 +205,8 @@ Please provide relevant medical analysis and insights based on this document.`;
           : `📎 Uploaded file: ${selectedFile.name} (${fileUploadResult.fileUrl})`;
       }
 
-      // Send user message
-      const userMessageSent = await sendMessage(messageText, 'User');
+      // Send user message, pass sessionId directly
+      const userMessageSent = await sendMessage(messageText, 'User', sessionId);
 
       if (userMessageSent) {
         // Clear the selected file after successful send
@@ -223,10 +225,10 @@ Please provide relevant medical analysis and insights based on this document.`;
               fileUploadResult?.fileUrl,
               fileUploadResult
             );
-            await sendMessage(aiResponse, 'AI');
+            await sendMessage(aiResponse, 'AI', sessionId);
           } catch (error) {
             console.error('Error generating AI response:', error);
-            await sendMessage('I apologize, but I encountered an error while processing your request. Please try again.', 'AI');
+            await sendMessage('I apologize, but I encountered an error while processing your request. Please try again.', 'AI', sessionId);
           } finally {
             setLoading(false);
           }

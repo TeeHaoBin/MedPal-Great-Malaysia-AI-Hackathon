@@ -1,3 +1,29 @@
+// Save OCR result to a specific DynamoDB table
+export interface OCRResultItem {
+  id: string; // unique id for the record
+  fileName: string;
+  fileUrl: string;
+  extractedText: string;
+  uploadedAt: string;
+  [key: string]: any;
+}
+
+export const saveOCRResult = async (item: OCRResultItem) => {
+  try {
+    const command = new PutCommand({
+      TableName: 'OCR-Text-Extraction-Table-Test',
+      Item: item,
+    });
+    await dynamoDb.send(command);
+    return { success: true, message: 'OCR result saved successfully' };
+  } catch (error) {
+    return {
+      success: false,
+      message: 'Failed to save OCR result',
+      error: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+};
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, ScanCommand, PutCommand, QueryCommand, DeleteCommand } from '@aws-sdk/lib-dynamodb';
 
