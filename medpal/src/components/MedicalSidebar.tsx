@@ -10,6 +10,7 @@ import {
   IconMessageCircle,
   IconShield,
   IconHistory,
+  IconX,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -27,13 +28,16 @@ interface MedicalSidebarProps {
   onSessionSelect: (sessionId: string) => void;
   activeSessionId?: string;
   onSessionDeleted?: () => void;
+  isOpen?: boolean;
+  onToggle?: () => void;
 }
 
 function SidebarContent({
   onSessionSelect,
   activeSessionId,
   onSessionDeleted,
-}: MedicalSidebarProps) {
+  onClose,
+}: Omit<MedicalSidebarProps, 'isOpen' | 'onToggle'> & { onClose?: () => void }) {
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [loading, setLoading] = useState(true);
   const { open, animate } = useSidebar();
@@ -62,79 +66,9 @@ function SidebarContent({
     }
   };
 
-  const createRealChatConversation = async () => {
-    const sessionId = `session_${Date.now()}`;
-    const baseTimestamp = new Date();
-
-    const conversations = [
-      {
-        user: 'What are the symptoms of dengue fever?',
-        ai: 'This is an AI response: Dengue fever symptoms include high fever (40°C/104°F), severe headache, muscle and joint pains, skin rash, and nausea. In severe cases, it can cause dengue hemorrhagic fever with bleeding and plasma leakage. Please consult a healthcare provider for proper diagnosis.',
-        intent: 'SymptomQuery',
-        sensitive: true,
-      },
-      {
-        user: 'Can you help me understand my blood pressure readings?',
-        ai: 'This is an AI response: Blood pressure readings show systolic (top number) and diastolic (bottom number) pressure. Normal is typically below 120/80 mmHg. High blood pressure (hypertension) is 130/80 mmHg or higher. However, always consult your doctor for personalized interpretation of your specific readings.',
-        intent: 'LabResultsQuery',
-        sensitive: true,
-      },
-      {
-        user: 'What should I know about diabetes management?',
-        ai: 'This is an AI response: Diabetes management involves regular blood sugar monitoring, healthy diet with controlled carbohydrates, regular exercise, medication adherence, and routine medical check-ups. Key targets include HbA1c below 7% for most adults. Always work with your healthcare team for personalized management plans.',
-        intent: 'TreatmentGuidance',
-        sensitive: false,
-      },
-    ];
-
-    const conversation =
-      conversations[Math.floor(Math.random() * conversations.length)];
-
-    try {
-      const userMessage = {
-        ChatSessionId: sessionId,
-        Timestamp: new Date(baseTimestamp.getTime()).toISOString(),
-        MessageId: `msg_${Date.now()}_user`,
-        Sender: 'User',
-        Message: conversation.user,
-        Metadata: {
-          UserId: 'user_sample',
-          Intent: conversation.intent,
-          IsSensitive: conversation.sensitive,
-        },
-      };
-
-      await fetch('/api/add-message', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(userMessage),
-      });
-
-      const aiMessage = {
-        ChatSessionId: sessionId,
-        Timestamp: new Date(baseTimestamp.getTime() + 2000).toISOString(),
-        MessageId: `msg_${Date.now()}_ai`,
-        Sender: 'AI',
-        Message: conversation.ai,
-        Metadata: {
-          UserId: 'user_sample',
-          Intent: conversation.intent,
-          IsSensitive: conversation.sensitive,
-        },
-      };
-
-      const aiResponse = await fetch('/api/add-message', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(aiMessage),
-      });
-
-      if (aiResponse.ok) {
-        await fetchSessions();
-      }
-    } catch (error) {
-      console.error('Error creating conversation:', error);
-    }
+  const handleNewChat = () => {
+    // Clear active session to return to homepage state
+    onSessionSelect('');
   };
 
   const deleteSession = async (sessionId: string, event: React.MouseEvent) => {
@@ -200,7 +134,7 @@ function SidebarContent({
       icon: (
         <IconPlus className="h-6 w-6 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
-      onClick: createRealChatConversation,
+      onClick: handleNewChat,
     },
     {
       label: 'Profile',
@@ -225,7 +159,19 @@ function SidebarContent({
         (animate ? open : true) ? 'overflow-y-auto pr-2' : 'overflow-y-hidden'
       )}
     >
-      <Logo />
+      <div className="flex items-center justify-between">
+        <Logo onLogoClick={handleNewChat} />
+        {/* Close button for mobile/iPad */}
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            aria-label="Close sidebar"
+          >
+            <IconX className="w-5 h-5" />
+          </button>
+        )}
+      </div>
       <div className="mt-8 flex flex-col gap-2">
         {links.map((link, idx) => (
           <div key={idx} onClick={link.onClick || (() => {})}>
@@ -238,64 +184,52 @@ function SidebarContent({
       <div className="mt-6">
         <div className="flex items-center justify-start gap-2 py-2">
           <IconHistory className="h-6 w-6 shrink-0 text-neutral-700 dark:text-neutral-200" />
-          <motion.span
-            animate={{
-              display: animate
-                ? open
-                  ? 'inline-block'
-                  : 'none'
-                : 'inline-block',
-              opacity: animate ? (open ? 1 : 0) : 1,
-            }}
-            className="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider whitespace-pre inline-block !p-0 !m-0"
-          >
+          <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider whitespace-pre inline-block !p-0 !m-0">
             Chat History
-          </motion.span>
+          </span>
         </div>
         <div className="mt-2 space-y-1">
-          {loading
-            ? (animate ? open : true) && (
-                <div className="text-xs text-neutral-500 px-2">Loading...</div>
-              )
-            : sessions.length === 0
-            ? null
-            : sessions.map((session) => (
-                <div
-                  key={session.sessionId}
-                  onClick={() => onSessionSelect(session.sessionId)}
-                  className={cn(
-                    'group flex items-center justify-between p-2 rounded-lg cursor-pointer transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-700',
-                    activeSessionId === session.sessionId &&
-                      'bg-neutral-200 dark:bg-neutral-700'
-                  )}
-                >
-                  <div className="flex items-center space-x-2 min-w-0 flex-1">
-                    <IconMessageCircle className="h-5 w-5 shrink-0 text-neutral-600 dark:text-neutral-300" />
-                    <div className="min-w-0 flex-1">
-                      <div className="text-xs font-medium text-neutral-700 dark:text-neutral-200 truncate">
-                        {session.sessionId.slice(-6)}
-                      </div>
-                      <div className="text-xs text-neutral-500 dark:text-neutral-400 truncate">
-                        {session.lastMessage.substring(0, 30)}...
-                      </div>
-                      <div className="flex items-center space-x-1 mt-1">
-                        <span className="text-xs text-neutral-400">
-                          {formatTimestamp(session.timestamp)}
-                        </span>
-                        {session.hasSensitiveData && (
-                          <IconShield className="h-4 w-4 text-amber-500" />
-                        )}
-                      </div>
+          {loading ? (
+            <div className="text-xs text-neutral-500 px-2">Loading...</div>
+          ) : sessions.length === 0 ? null : (
+            sessions.map((session) => (
+              <div
+                key={session.sessionId}
+                onClick={() => onSessionSelect(session.sessionId)}
+                className={cn(
+                  'group flex items-center justify-between p-2 rounded-lg cursor-pointer transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-700',
+                  activeSessionId === session.sessionId &&
+                    'bg-neutral-200 dark:bg-neutral-700'
+                )}
+              >
+                <div className="flex items-center space-x-2 min-w-0 flex-1">
+                  <IconMessageCircle className="h-5 w-5 shrink-0 text-neutral-600 dark:text-neutral-300" />
+                  <div className="min-w-0 flex-1">
+                    <div className="text-xs font-medium text-neutral-700 dark:text-neutral-200 truncate">
+                      Session {session.sessionId.slice(-6)}
+                    </div>
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 truncate">
+                      {session.lastMessage.substring(0, 30)}...
+                    </div>
+                    <div className="flex items-center space-x-1 mt-1">
+                      <span className="text-xs text-neutral-400">
+                        {formatTimestamp(session.timestamp)}
+                      </span>
+                      {session.hasSensitiveData && (
+                        <IconShield className="h-4 w-4 text-amber-500" />
+                      )}
                     </div>
                   </div>
-                  <button
-                    onClick={(e) => deleteSession(session.sessionId, e)}
-                    className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 dark:hover:bg-red-900 rounded transition-all"
-                  >
-                    <IconTrash className="h-4 w-4 text-red-500" />
-                  </button>
                 </div>
-              ))}
+                <button
+                  onClick={(e) => deleteSession(session.sessionId, e)}
+                  className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 dark:hover:bg-red-900 rounded transition-all"
+                >
+                  <IconTrash className="h-4 w-4 text-red-500" />
+                </button>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>
@@ -306,44 +240,62 @@ export function MedicalSidebar({
   onSessionSelect,
   activeSessionId,
   onSessionDeleted,
+  isOpen = false,
+  onToggle,
 }: MedicalSidebarProps) {
   return (
-    <div className={cn('flex flex-col h-full w-full')}>
-      <Sidebar>
-        <SidebarBody className="justify-between gap-10">
-          <SidebarContent
-            onSessionSelect={onSessionSelect}
-            activeSessionId={activeSessionId}
-            onSessionDeleted={onSessionDeleted}
-          />
-          <div>
-            <SidebarLink
-              link={{
-                label: 'MedPal User',
-                href: '#',
-                icon: (
-                  <Image
-                    src="/profile.jpg"
-                    className="h-7 w-7 shrink-0 rounded-full"
-                    width={50}
-                    height={50}
-                    alt="User Profile"
-                  />
-                ),
-              }}
+    <>
+      {/* Invisible overlay for click-outside detection on mobile/iPad */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 lg:hidden"
+          onClick={onToggle}
+          aria-hidden="true"
+        />
+      )}
+
+      <div className={cn(
+        'flex flex-col h-full w-full medical-sidebar',
+        'fixed inset-y-0 left-0 z-50 w-[300px] transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 lg:z-auto',
+        isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      )}>
+        <Sidebar open={true} animate={false}>
+          <SidebarBody className="justify-between gap-10">
+            <SidebarContent
+              onSessionSelect={onSessionSelect}
+              activeSessionId={activeSessionId}
+              onSessionDeleted={onSessionDeleted}
+              onClose={onToggle}
             />
-          </div>
-        </SidebarBody>
-      </Sidebar>
-    </div>
+            <div>
+              <SidebarLink
+                link={{
+                  label: 'MedPal User',
+                  href: '#',
+                  icon: (
+                    <Image
+                      src="/profile.jpg"
+                      className="h-7 w-7 shrink-0 rounded-full"
+                      width={50}
+                      height={50}
+                      alt="User Profile"
+                    />
+                  ),
+                }}
+              />
+            </div>
+          </SidebarBody>
+        </Sidebar>
+      </div>
+    </>
   );
 }
 
-export const Logo = () => {
+export const Logo = ({ onLogoClick }: { onLogoClick?: () => void }) => {
   return (
-    <a
-      href="#"
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
+    <button
+      onClick={onLogoClick}
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black hover:opacity-80 transition-opacity cursor-pointer"
     >
       <Image
         src="/MedPal.png"
@@ -359,7 +311,7 @@ export const Logo = () => {
       >
         MedPal
       </motion.span>
-    </a>
+    </button>
   );
 };
 

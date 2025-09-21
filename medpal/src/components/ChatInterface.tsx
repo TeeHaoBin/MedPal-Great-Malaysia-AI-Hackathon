@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Send, Upload } from 'lucide-react';
+import { Send, Upload, Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MessageContent from './MessageContent';
 
@@ -20,9 +20,10 @@ interface ChatMessage {
 
 interface ChatInterfaceProps {
   activeSessionId?: string;
+  onSidebarToggle?: () => void;
 }
 
-export default function ChatInterface({ activeSessionId }: ChatInterfaceProps) {
+export default function ChatInterface({ activeSessionId, onSidebarToggle }: ChatInterfaceProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [loading, setLoading] = useState(false);
@@ -312,18 +313,32 @@ Please provide relevant medical analysis and insights based on this document.`;
   };
 
   return (
-    <div className="flex flex-col h-full bg-white">
+    <div className="flex flex-col h-full bg-white chat-container">
       {/* Chat Header */}
       <div className="border-b border-gray-200 p-4">
-        <div className="flex items-center justify-center">
-          <h1 className="text-xl font-semibold text-gray-900">
-            Chat with MedPal
-            {activeSessionId && (
-              <span className="ml-2 text-sm text-gray-500 font-normal">
-                Session: {activeSessionId.slice(-6)}
-              </span>
-            )}
-          </h1>
+        <div className="flex items-center justify-between">
+          {/* Hamburger Menu for Mobile/iPad */}
+          <button
+            onClick={onSidebarToggle}
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle sidebar"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+
+          <div className="flex-1 flex items-center justify-center lg:justify-center">
+            <h1 className="text-xl font-semibold text-gray-900">
+              Chat with MedPal
+              {activeSessionId && (
+                <span className="ml-2 text-sm text-gray-500 font-normal">
+                  Session: {activeSessionId.slice(-6)}
+                </span>
+              )}
+            </h1>
+          </div>
+
+          {/* Spacer for mobile to keep title centered */}
+          <div className="lg:hidden w-9"></div>
         </div>
       </div>
 
@@ -350,7 +365,7 @@ Please provide relevant medical analysis and insights based on this document.`;
                   className="group"
                 >
                   <div className={`flex ${message.Sender === 'User' ? 'justify-end' : 'justify-start'} mb-6`}>
-                    <div className={`flex max-w-[80%] ${message.Sender === 'User' ? 'flex-row-reverse' : 'flex-row'}`}>
+                    <div className={`flex max-w-[85%] sm:max-w-[80%] ${message.Sender === 'User' ? 'flex-row-reverse' : 'flex-row'}`}>
                       {/* Avatar */}
                       <div className={`flex-shrink-0 ${message.Sender === 'User' ? 'ml-3' : 'mr-3'}`}>
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
@@ -427,7 +442,7 @@ Please provide relevant medical analysis and insights based on this document.`;
       
       {/* Input Area */}
       <div className="border-t border-gray-200 bg-white">
-        <div className="max-w-3xl mx-auto px-4 py-4">
+        <div className="max-w-3xl mx-auto px-4 py-4 sm:px-6">
           {/* File Upload Section */}
           {selectedFile && (
             <div className="mb-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">

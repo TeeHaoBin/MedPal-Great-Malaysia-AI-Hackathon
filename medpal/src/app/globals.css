@@ -134,3 +134,89 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+/* Responsive design optimizations */
+
+/* Base styles for all screen sizes */
+.main-content {
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Mobile devices (up to 1024px) */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .chat-container {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+  .chat-container {
+    padding: 0 12px;
+  }
+}
+
+/* iPad and tablet devices (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-content {
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+  }
+
+  .chat-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Better spacing for iPad */
+  .chat-container .max-w-3xl {
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Desktop devices (1025px and above) */
+@media (min-width: 1025px) {
+  .main-content {
+    margin-left: 300px !important;
+    width: calc(100% - 300px) !important;
+  }
+
+  .chat-container {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Optimize chat width for larger screens */
+  .chat-container .max-w-3xl {
+    max-width: 900px !important;
+  }
+}
+
+/* Large desktop screens (1440px and above) */
+@media (min-width: 1440px) {
+  .chat-container .max-w-3xl {
+    max-width: 1100px !important;
+  }
+}
+
+/* Sidebar styles */
+.medical-sidebar {
+  background: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Ensure no gaps between sidebar and content */
+@media (max-width: 1024px) {
+  .medical-sidebar {
+    border-right: none;
+  }
+}

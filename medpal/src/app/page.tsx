@@ -14,7 +14,11 @@ export default function Home() {
   };
 
   const handleSessionSelect = (sessionId: string) => {
-    setActiveSessionId(sessionId);
+    if (sessionId === '') {
+      setActiveSessionId(undefined); // Clear session for "New Chat" / homepage
+    } else {
+      setActiveSessionId(sessionId);
+    }
     setSidebarOpen(false); // Close sidebar on mobile after selection
   };
 
@@ -27,10 +31,15 @@ export default function Home() {
         onSessionSelect={handleSessionSelect}
         activeSessionId={activeSessionId}
         onSessionDeleted={handleSessionDeleted}
+        isOpen={sidebarOpen}
+        onToggle={handleSidebarToggle}
       />
 
-      <main className="md:ml-[300px] h-screen flex flex-col">
-        <ChatInterface activeSessionId={activeSessionId} />
+      <main className="h-screen flex flex-col main-content">
+        <ChatInterface
+          activeSessionId={activeSessionId}
+          onSidebarToggle={handleSidebarToggle}
+        />
       </main>
     </div>
   );
