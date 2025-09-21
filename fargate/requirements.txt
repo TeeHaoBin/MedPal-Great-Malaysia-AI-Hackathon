@@ -1,0 +1,4 @@
+boto3
+paddlepaddle
+paddleocr
+PyMuPDF==1.24.1
