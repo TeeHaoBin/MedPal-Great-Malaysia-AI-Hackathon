@@ -130,7 +130,7 @@ export default function ChatInterface({ activeSessionId, onSidebarToggle }: Chat
     }
   };
 
-  const generateAIResponse = async (userMessage: string, fileUrl?: string, documentData?: any): Promise<string> => {
+  const generateAIResponse = async (userMessage: string, fileUrl?: string, documentData?: FileUploadResponse | null): Promise<string> => {
     try {
       // Get conversation history for context
       const conversationHistory = messages.map(msg => ({
@@ -280,7 +280,7 @@ Please provide relevant medical analysis and insights based on this document.`;
     }
   };
 
-  const uploadFileToS3 = async (file: File) => {
+  const uploadFileToS3 = async (file: File): Promise<FileUploadResponse> => {
     try {
       const formData = new FormData();
       formData.append('file', file);
