@@ -23,6 +23,23 @@ interface ChatInterfaceProps {
   onSidebarToggle?: () => void;
 }
 
+interface FileUploadResponse {
+  success: boolean;
+  message?: string;
+  error?: string;
+  fileName?: string;
+  fileSize?: string;
+  fileType?: string;
+  fileUrl?: string;
+  s3Key?: string;
+  documentProcessing?: {
+    success: boolean;
+    extractedText?: string;
+    documentType?: string;
+    error?: string;
+  };
+}
+
 export default function ChatInterface({ activeSessionId, onSidebarToggle }: ChatInterfaceProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputValue, setInputValue] = useState('');

@@ -263,7 +263,7 @@ export default function LandingPage() {
                 <h3 className="text-2xl font-bold mb-4 text-center text-green-400">Best-in-Class AWS Cloud Infrastructure</h3>
                 <p className="text-gray-300 text-center leading-relaxed max-w-4xl mx-auto">
                   Our platform is built on Amazon Web Services (AWS) with a well-designed architecture that ensures scalability, reliability, and performance. 
-                  We leverage AWS's robust cloud infrastructure to provide you with the best possible experience, from secure data storage to lightning-fast AI processing.
+                  We leverage AWS&apos;s robust cloud infrastructure to provide you with the best possible experience, from secure data storage to lightning-fast AI processing.
                 </p>
               </motion.div>
             </div>

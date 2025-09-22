@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
     const documentResult = await processDocument(fileUrl, file.name);
 
     // Save OCR result to DynamoDB (OCR-Text-Extraction-Table-Test)
-    let ocrItemId = uuidv4();
+    const ocrItemId = uuidv4();
     if (documentResult.success && documentResult.extractedText) {
       await saveOCRResult({
         id: ocrItemId,

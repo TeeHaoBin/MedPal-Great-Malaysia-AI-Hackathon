@@ -5,7 +5,7 @@ export interface OCRResultItem {
   fileUrl: string;
   extractedText: string;
   uploadedAt: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export const saveOCRResult = async (item: OCRResultItem) => {
