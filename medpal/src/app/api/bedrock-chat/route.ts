@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
 
     // Validate message format
     const validMessages: BedrockMessage[] = messages.map(msg => ({
-      role: msg.role === 'User' ? 'user' : 'assistant',
+      role: (msg.role === 'User' ? 'user' : 'assistant') as 'user' | 'assistant',
       content: msg.content || msg.Message || ''
     })).filter(msg => msg.content.trim() !== '');
 
