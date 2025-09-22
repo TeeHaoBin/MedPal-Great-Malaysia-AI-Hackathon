@@ -78,20 +78,21 @@ export default function MessageContent({ content, isAI }: MessageContentProps) {
           ),
 
           // Code blocks
-          code: ({ inline, children }) => {
-            if (inline) {
+          code: ({ className, children }) => {
+            // If className exists (e.g., language-js), it's a block of code.
+            // react-markdown wraps this in a <pre> tag automatically.
+            if (className) {
               return (
-                <code className="bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-xs font-mono">
+                <code className="text-xs font-mono text-gray-800">
                   {children}
                 </code>
               );
             }
+            // Otherwise, it's inline code.
             return (
-              <pre className="bg-gray-100 p-3 rounded-lg overflow-x-auto mb-2">
-                <code className="text-xs font-mono text-gray-800">
-                  {children}
-                </code>
-              </pre>
+              <code className="bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-xs font-mono">
+                {children}
+              </code>
             );
           },
 
