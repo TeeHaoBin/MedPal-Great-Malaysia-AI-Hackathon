@@ -1,0 +1,47 @@
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VercelMedPalBedrockAccess",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:ListFoundationModels"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VercelMedPalDynamoDBAccess",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:GetItem",
+                "dynamodb:Query",
+                "dynamodb:Scan",
+                "dynamodb:DeleteItem",
+                "dynamodb:DescribeTable"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:862070608712:table/medpal-history",
+                "arn:aws:dynamodb:us-east-1:862070608712:table/medpal-history/index/*",
+                "arn:aws:dynamodb:us-east-1:862070608712:table/OCR-Text-Extraction-Table",
+                "arn:aws:dynamodb:us-east-1:862070608712:table/OCR-Text-Extraction-Table/index/*",
+                "arn:aws:dynamodb:us-east-1:862070608712:table/OCR-Text-Extraction-Table-Test",
+                "arn:aws:dynamodb:us-east-1:862070608712:table/OCR-Text-Extraction-Table-Test/index/*"
+            ]
+        },
+        {
+            "Sid": "VercelMedPalS3Access",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::medpal-uploads/*",
+                "arn:aws:s3:::testing-pdf-files-medpal/*"
+            ]
+        }
+    ]
+}
