@@ -1,0 +1,4664 @@
+---
+Metadata:
+  AWSToolsMetrics:
+    IaC_Generator: "arn:aws:cloudformation:us-east-1:862070608712:generatedTemplate/015bd942-922b-4d42-b10b-2915609f0a33"
+Parameters:
+  LambdaFunctionPaddleocrprocessorCodeS3KeyKT0fw:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionPdfProcessorCodeS3ObjectVersionbV6tn:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionTRYCodeS3ObjectVersion63Qas:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionGcpvisionocrprocessorCodeS3KeyKUhhT:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionMedpalpdfplumberocrCodeS3BucketRIQdL:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionGcpvisionocrprocessorCodeZipFile0w4k7:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionMedpalenhancedocrCodeS3BucketYcCR7:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionGcpvisionocrprocessorCodeS3BucketSLhTl:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionPdftextextractorCodeZipFilexK2YM:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionDeekseekR1feedingCodeImageUridUkLw:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionMedpalpdfplumberocrCodeImageUrilL7Ea:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionDeekseekR1testCodeImageUripHJnR:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionDeekseekR1feedingCodeS3KeyonJ3W:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionPdfProcessorCodeImageUritE0On:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionPdfProcessorCodeS3KeyTUqrB:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionMedpalpdfplumberocrCodeS3Key3Npk2:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionPdftextextractorCodeS3ObjectVersionMkYKv:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionMedpalenhancedocrCodeS3ObjectVersion4HORX:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionPaddleocrprocessorCodeS3BucketmTxhu:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionPaddleocrprocessorCodeZipFileZakvL:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionGcpvisionocrprocessorCodeS3ObjectVersionTLPyS:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionPaddleocrprocessorCodeImageUriVJzXP:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionDeekseekR1feedingCodeZipFile799p6:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionOcrpaddleCodeS3BucketylP6f:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionTRYCodeS3KeyESfHB:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionMedpalinstantocrCodeS3KeyxJAwa:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionPdftextextractorCodeS3KeyFmMKS:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionOcrpaddleCodeS3KeyeZcz2:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionOcrpaddleCodeZipFileW6hMj:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionTRYCodeS3BucketmYccn:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionPaddleocrprocessorCodeS3ObjectVersionXSbcz:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionTRYCodeImageUri5T5ry:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionPdfProcessorCodeZipFile42cY1:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionPdftextextractorCodeImageUriYk5g7:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionMedpalpdfplumberocrCodeS3ObjectVersionwn7VL:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionMedpalenhancedocrCodeZipFilez0EcZ:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionMedpalinstantocrCodeS3ObjectVersionqC4xf:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionMedpalenhancedocrCodeS3KeyrfQ6F:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionMedpalpdfplumberocrCodeZipFileAtVqt:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionMedpalenhancedocrCodeImageUrimyHek:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionDeekseekR1feedingCodeS3ObjectVersionnq4Km:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionGcpvisionocrprocessorCodeImageUriaEgeR:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionMedpalinstantocrCodeZipFilejzLgf:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionDeekseekR1testCodeS3BucketxWzDW:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionTRYCodeZipFile9cBvr:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionMedpalinstantocrCodeS3BucketuiJtT:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionMedpalinstantocrCodeImageUriNEHbc:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionOcrpaddleCodeS3ObjectVersionlzyEA:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionOcrpaddleCodeImageUri0u73Y:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionDeekseekR1testCodeS3KeygSFuC:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionPdfProcessorCodeS3Bucketc3UCf:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionDeekseekR1testCodeZipFileVNbG1:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that LAM treats\
+      \ the file as a CommonJS module. ES modules aren't supported for inline functions.\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionDeekseekR1testCodeS3ObjectVersion6U2xz:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunctionDeekseekR1feedingCodeS3BucketBz32P:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionPdftextextractorCodeS3BucketUKvav:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+Resources:
+  IAMManagedPolicyPolicyserviceroleAWSLambdaBasicExecutionRolea58803159f774b2594402ddaebc2cdb9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "AWSLambdaBasicExecutionRole-a5880315-9f77-4b25-9440-2ddaebc2cdb9"
+      Path: "/service-role/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+          Action: "logs:CreateLogGroup"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:logs:us-east-1:862070608712:log-group:/aws/lambda/test:*"
+          Action:
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRoleTestrolek43sq4f2"
+      Users: []
+  ECRRepositoryFargateocrprocessor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECR::Repository"
+    DeletionPolicy: "Retain"
+    Properties:
+      ImageScanningConfiguration:
+        ScanOnPush: false
+      RepositoryName: "fargate-ocr-processor"
+      EncryptionConfiguration:
+        EncryptionType: "AES256"
+      Tags: []
+      ImageTagMutability: "MUTABLE"
+  LogsLogStream20250920LATEST3a65c213dbc5421cae8baba6278c5438:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]3a65c213dbc5421cae8baba6278c5438"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1feeding"
+  LambdaFunctionDeekseekR1test:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 128
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 300
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionDeekseekR1testCodeS3ObjectVersion6U2xz"
+        S3Bucket:
+          Ref: "LambdaFunctionDeekseekR1testCodeS3BucketxWzDW"
+        ZipFile:
+          Ref: "LambdaFunctionDeekseekR1testCodeZipFileVNbG1"
+        ImageUri:
+          Ref: "LambdaFunctionDeekseekR1testCodeImageUripHJnR"
+        S3Key:
+          Ref: "LambdaFunctionDeekseekR1testCodeS3KeygSFuC"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleDeekseekR1testrolenhczo754"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "deekseekR1-test"
+      Runtime: "python3.11"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/deekseekR1-test"
+      RecursiveLoop: "Terminate"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  LogsLogStreamEcsocrcontainerbd93daa6dd42400794f2f56633550f7b:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/bd93daa6dd42400794f2f56633550f7b"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogGroupawslambdaTRY:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/TRY"
+      DataProtectionPolicy: {}
+  LambdaFunctionOcrpaddle:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 128
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 3
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionOcrpaddleCodeS3ObjectVersionlzyEA"
+        S3Bucket:
+          Ref: "LambdaFunctionOcrpaddleCodeS3BucketylP6f"
+        ZipFile:
+          Ref: "LambdaFunctionOcrpaddleCodeZipFileW6hMj"
+        ImageUri:
+          Ref: "LambdaFunctionOcrpaddleCodeImageUri0u73Y"
+        S3Key:
+          Ref: "LambdaFunctionOcrpaddleCodeS3KeyeZcz2"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleOcrpaddlerole0h4p8po9"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "ocrpaddle"
+      Runtime: "python3.13"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/ocrpaddle"
+      RecursiveLoop: "Terminate"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  ECSTaskDefinitionTaskdefinitionocrtaskdef2:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "3072"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "1024"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  LogsLogStream20250920LATESTdc835e1477664e3fb89a9ec88d08f36c:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]dc835e1477664e3fb89a9ec88d08f36c"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1feeding"
+  ECSTaskDefinitionTaskdefinitionocrtaskdef1:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "3072"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "1024"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  LogsLogStreamEcsocrcontainer4adc20c016f840789bcd19e2efebe0db:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/4adc20c016f840789bcd19e2efebe0db"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  ECSTaskDefinitionTaskdefinitionocrtaskdef4:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  LogsLogStream20250920LATEST7c260a5150464e28ae4eb7b39b481511:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]7c260a5150464e28ae4eb7b39b481511"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  ECSTaskDefinitionTaskdefinitionocrtaskdef3:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "3072"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "1024"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  ECSTaskDefinitionTaskdefinitionocrtaskdef6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  LogsLogStreamEcsocrcontainere955cd3a9388465a81a7e9504799dff2:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/e955cd3a9388465a81a7e9504799dff2"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  ECSTaskDefinitionTaskdefinitionocrtaskdef5:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  AthenaWorkGroupPrimary:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Athena::WorkGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      WorkGroupConfiguration:
+        RequesterPaysEnabled: false
+        EnforceWorkGroupConfiguration: false
+        EngineVersion:
+          SelectedEngineVersion: "AUTO"
+        PublishCloudWatchMetricsEnabled: false
+        ResultConfiguration: {}
+      Description: ""
+      State: "ENABLED"
+      Tags: []
+      Name: "primary"
+  IAMManagedPolicyPolicyserviceroleAWSLambdaBasicExecutionRole6f654837dd0b42ad940213469a9ee9ac:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "AWSLambdaBasicExecutionRole-6f654837-dd0b-42ad-9402-13469a9ee9ac"
+      Path: "/service-role/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+          Action: "logs:CreateLogGroup"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:logs:us-east-1:862070608712:log-group:/aws/lambda/ocrpaddle:*"
+          Action:
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRoleOcrpaddlerole0h4p8po9"
+      Users: []
+  IAMRoleECSTaskExecutionRoleForOCR:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "ECSTaskExecutionRoleForOCR"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "ecs-tasks.amazonaws.com"
+  LogsLogStream20250920LATEST77cb7c71e0e941fb8ec12b0a8e19205e:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]77cb7c71e0e941fb8ec12b0a8e19205e"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalinstantocr"
+  ECSTaskDefinitionTaskdefinitionocrtaskdef8:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  ECSTaskDefinitionTaskdefinitionocrtaskdef7:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  LogsLogStream20250920LATESTd91ab4b187d144b38bb07f61648844ad:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]d91ab4b187d144b38bb07f61648844ad"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalenhancedocr"
+  EC2NetworkAcl:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkAcl"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-0ae95c8413b473ab9"
+      Tags: []
+  LogsLogStream20250920LATEST52272a62221049ad9ea14cbed20421ee:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]52272a62221049ad9ea14cbed20421ee"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1test"
+  ECSTaskDefinitionTaskdefinitionocrtaskdef9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  IAMUserJia:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::User"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:s3:::testing-pdf-files-medpal*"
+            Action:
+            - "s3:PutObject"
+            - "s3:GetObject"
+            - "s3:DeleteObject"
+            Effect: "Allow"
+        PolicyName: "s3read"
+      UserName: "jia"
+  DynamoDBTableOCRTextExtractionTable:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::DynamoDB::Table"
+    DeletionPolicy: "Retain"
+    Properties:
+      SSESpecification:
+        SSEEnabled: false
+      TableName: "OCR-Text-Extraction-Table"
+      AttributeDefinitions:
+      - AttributeType: "S"
+        AttributeName: "documentId"
+      - AttributeType: "S"
+        AttributeName: "userId"
+      ContributorInsightsSpecification:
+        Enabled: false
+      BillingMode: "PAY_PER_REQUEST"
+      GlobalSecondaryIndexes:
+      - IndexName: "UserIndex"
+        Projection:
+          ProjectionType: "ALL"
+          NonKeyAttributes: []
+        KeySchema:
+        - KeyType: "HASH"
+          AttributeName: "userId"
+        WarmThroughput:
+          ReadUnitsPerSecond: 12000
+          WriteUnitsPerSecond: 4000
+        ContributorInsightsSpecification:
+          Enabled: false
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: false
+      WarmThroughput:
+        ReadUnitsPerSecond: 12000
+        WriteUnitsPerSecond: 4000
+      KeySchema:
+      - KeyType: "HASH"
+        AttributeName: "documentId"
+      DeletionProtectionEnabled: false
+      Tags:
+      - Value: "MedicalOCR"
+        Key: "Project"
+      TimeToLiveSpecification:
+        Enabled: false
+  CloudFrontCachePolicySr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Amplify cache policy for static content"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStrings:
+            - "dpl"
+            QueryStringBehavior: "whitelist"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "RSC"
+            - "CloudFront-Viewer-Country"
+            - "X-Amplify-Dpl"
+            - "Host"
+          CookiesConfig:
+            Cookies:
+            - "__dpl"
+            CookieBehavior: "whitelist"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "Managed-Amplify-StaticContent-V2"
+  LambdaFunctionPaddleocrprocessor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 3008
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 600
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionPaddleocrprocessorCodeS3ObjectVersionXSbcz"
+        S3Bucket:
+          Ref: "LambdaFunctionPaddleocrprocessorCodeS3BucketmTxhu"
+        ZipFile:
+          Ref: "LambdaFunctionPaddleocrprocessorCodeZipFileZakvL"
+        ImageUri:
+          Ref: "LambdaFunctionPaddleocrprocessorCodeImageUriVJzXP"
+        S3Key:
+          Ref: "LambdaFunctionPaddleocrprocessorCodeS3KeyKT0fw"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleLambdaPaddleOCRRole"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "paddleocr-processor"
+      PackageType: "Image"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/paddleocr-processor"
+      RecursiveLoop: "Terminate"
+      Environment:
+        Variables:
+          PADDLE_CACHE_HOME: "/tmp/paddle_cache"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  LogsLogStreamEcsocrcontainerd125d24bf6ce407f8b871ddc0700cf9d:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/d125d24bf6ce407f8b871ddc0700cf9d"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  IAMManagedPolicyPolicyserviceroleAWSLambdaBasicExecutionRole106db27913e145328fd16b2b80fdee9e:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "AWSLambdaBasicExecutionRole-106db279-13e1-4532-8fd1-6b2b80fdee9e"
+      Path: "/service-role/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+          Action: "logs:CreateLogGroup"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:logs:us-east-1:862070608712:log-group:/aws/lambda/TRY:*"
+          Action:
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRoleTRYrolemn98a8c6"
+      Users: []
+  CloudFrontCachePolicyUx:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Default Amplify cache policy"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "all"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "Accept"
+            - "CloudFront-Viewer-Country"
+            - "Host"
+          CookiesConfig:
+            CookieBehavior: "all"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "Managed-Amplify-Default"
+  LogsLogStreamEcsocrcontainer72fac92ccf534e598bacbe93482e8421:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/72fac92ccf534e598bacbe93482e8421"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  IAMRolePdfProcessorrole8kbnfqdx:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::862070608712:policy/service-role/AWSLambdaBasicExecutionRole-dab38069-e862-4ea8-bc81-1dc012281731"
+      MaxSessionDuration: 3600
+      RoleName: "pdfProcessor-role-8kbnfqdx"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  LogsLogStreamEcsocrcontainer0196aaaf363d430f86b65095c9c5e428:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/0196aaaf363d430f86b65095c9c5e428"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  EC2SecurityGroup:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      GroupDescription: "default VPC security group"
+      GroupName: "default"
+      VpcId: "vpc-0ae95c8413b473ab9"
+      SecurityGroupIngress:
+      - IpProtocol: "-1"
+        FromPort: -1
+        SourceSecurityGroupId: "sg-0785ed53c9e36431c"
+        ToPort: -1
+        SourceSecurityGroupOwnerId: "862070608712"
+      SecurityGroupEgress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+        FromPort: -1
+        ToPort: -1
+  DynamoDBTableTestingpdftextsmedpal:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::DynamoDB::Table"
+    DeletionPolicy: "Retain"
+    Properties:
+      SSESpecification:
+        SSEEnabled: false
+      TableName: "testing-pdf-texts-medpal"
+      AttributeDefinitions:
+      - AttributeType: "S"
+        AttributeName: "Filename"
+      - AttributeType: "S"
+        AttributeName: "documentId"
+      ContributorInsightsSpecification:
+        Enabled: false
+      BillingMode: "PAY_PER_REQUEST"
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: false
+      WarmThroughput:
+        ReadUnitsPerSecond: 12000
+        WriteUnitsPerSecond: 4000
+      KeySchema:
+      - KeyType: "HASH"
+        AttributeName: "documentId"
+      - KeyType: "RANGE"
+        AttributeName: "Filename"
+      DeletionProtectionEnabled: false
+      TableClass: "STANDARD"
+      Tags: []
+      TimeToLiveSpecification:
+        Enabled: false
+  IAMUserShaun:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::User"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/IAMUserChangePassword"
+      - "arn:aws:iam::aws:policy/AWSLambda_FullAccess"
+      - "arn:aws:iam::862070608712:policy/MedPalLambdaDeployment"
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
+      UserName: "shaun"
+      LoginProfile:
+        PasswordResetRequired: true
+  LambdaFunctionMedpalenhancedocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 1024
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 180
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionMedpalenhancedocrCodeS3ObjectVersion4HORX"
+        S3Bucket:
+          Ref: "LambdaFunctionMedpalenhancedocrCodeS3BucketYcCR7"
+        ZipFile:
+          Ref: "LambdaFunctionMedpalenhancedocrCodeZipFilez0EcZ"
+        ImageUri:
+          Ref: "LambdaFunctionMedpalenhancedocrCodeImageUrimyHek"
+        S3Key:
+          Ref: "LambdaFunctionMedpalenhancedocrCodeS3KeyrfQ6F"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleMedpaltesseractlambdarole"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "medpal-enhanced-ocr"
+      Runtime: "python3.9"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/medpal-enhanced-ocr"
+      RecursiveLoop: "Terminate"
+      Environment:
+        Variables:
+          DYNAMODB_TABLE_NAME: "OCR-Text-Extraction-Table"
+          S3_BUCKET_NAME: "testing-pdf-files-medpal"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  LogsLogStream20250920LATEST9aa1fe5e0a92451a92491ddb41affe28:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]9aa1fe5e0a92451a92491ddb41affe28"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  CloudFrontCachePolicyGC:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Amplify cache policy for static content"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "none"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "Host"
+          CookiesConfig:
+            CookieBehavior: "none"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "Managed-Amplify-StaticContent"
+  IAMManagedPolicyPolicyserviceroleAWSLambdaBasicExecutionRole81f420b3510d4d4f8c58926df7863167:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "AWSLambdaBasicExecutionRole-81f420b3-510d-4d4f-8c58-926df7863167"
+      Path: "/service-role/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+          Action: "logs:CreateLogGroup"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:logs:us-east-1:862070608712:log-group:/aws/lambda/deekseekR1-test:*"
+          Action:
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRoleDeekseekR1testrolenhczo754"
+      Users: []
+  LogsLogGroupecsocrtaskdef:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/ecs/ocr-task-def"
+      DataProtectionPolicy: {}
+  LogsLogStream20250920LATEST7ec40d0c0ec24fe69b9c12da2b254b3b:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]7ec40d0c0ec24fe69b9c12da2b254b3b"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalenhancedocr"
+  LogsLogStream20250920LATEST9d9c3f9ddd924a9780e2ce2edd7684bf:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]9d9c3f9ddd924a9780e2ce2edd7684bf"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdaocrpaddle"
+  LambdaPermissionFunctionmedpalinstantocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionMedpalinstantocr"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+  IAMUserBedrockAPIKey61ql:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::User"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AmazonBedrockLimitedAccess"
+      UserName: "BedrockAPIKey-61ql"
+  LogsLogStream20250921LATEST2f599eca8bbd438e86a74b692deeb014:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/21/[$LATEST]2f599eca8bbd438e86a74b692deeb014"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  CloudFrontOriginRequestPolicy:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::OriginRequestPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      OriginRequestPolicyConfig:
+        QueryStringsConfig:
+          QueryStringBehavior: "all"
+        Comment: "Policy to forward all parameters in viewer requests"
+        HeadersConfig:
+          HeaderBehavior: "allViewer"
+        CookiesConfig:
+          CookieBehavior: "all"
+        Name: "Managed-AllViewer"
+  LogsLogGroupawslambdaocrpaddle:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/ocrpaddle"
+      DataProtectionPolicy: {}
+  LogsLogStreamEcsocrcontainerffc2cc5338d14a9faca48059f1561340:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/ffc2cc5338d14a9faca48059f1561340"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LambdaPermissionFunctiongcpvisionocrprocessor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionGcpvisionocrprocessor"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+      SourceAccount: "862070608712"
+  MemoryDBParameterGroupDefaultmemorydbredis7:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::MemoryDB::ParameterGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      ParameterGroupName: "default.memorydb-redis7"
+      Family: "memorydb_redis7"
+      Description: "Default parameter group for memorydb_redis7"
+  MemoryDBParameterGroupDefaultmemorydbredis6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::MemoryDB::ParameterGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      ParameterGroupName: "default.memorydb-redis6"
+      Family: "memorydb_redis6"
+      Description: "Default parameter group for memorydb_redis6"
+  EC2RouteXD:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Route"
+    DeletionPolicy: "Retain"
+    Properties:
+      RouteTableId: "rtb-0ccf0b19c8702b378"
+      DestinationCidrBlock: "10.0.0.0/16"
+      GatewayId: "local"
+      VpcEndpointId: "local"
+  IAMManagedPolicyPolicyMedPalLambdaDeployment:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "MedPalLambdaDeployment"
+      Path: "/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "*"
+          Action:
+          - "lambda:*"
+          - "iam:CreateRole"
+          - "iam:AttachRolePolicy"
+          - "iam:PutRolePolicy"
+          - "iam:GetRole"
+          - "iam:PassRole"
+          Effect: "Allow"
+      Roles: []
+      Users:
+      - Ref: "IAMUserShaun"
+  IAMRoleLambdaGCPVisionOCRRole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      MaxSessionDuration: 3600
+      RoleName: "LambdaGCPVisionOCRRole"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+            Action:
+            - "logs:CreateLogGroup"
+            - "logs:CreateLogStream"
+            - "logs:PutLogEvents"
+            Effect: "Allow"
+          - Resource: "arn:aws:s3:::testing-pdf-files-medpal/*"
+            Action: "s3:GetObject"
+            Effect: "Allow"
+          - Resource: "arn:aws:dynamodb:us-east-1:862070608712:table/OCR-Text-Extraction-Table"
+            Action:
+            - "dynamodb:PutItem"
+            - "dynamodb:GetItem"
+            Effect: "Allow"
+        PolicyName: "LambdaGCPVisionOCRPolicy"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  CloudFrontCachePolicyGn:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Default Amplify cache policy"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "all"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "RSC"
+            - "Accept"
+            - "CloudFront-Viewer-Country"
+            - "X-Amplify-Dpl"
+            - "Host"
+          CookiesConfig:
+            CookieBehavior: "all"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "Managed-Amplify-Default-V2"
+  CloudFrontOriginRequestPolicyF7:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::OriginRequestPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      OriginRequestPolicyConfig:
+        QueryStringsConfig:
+          QueryStringBehavior: "all"
+        Comment: "Policy to forward all parameters in viewer requests and all CloudFront\
+          \ headers as of June 2022"
+        HeadersConfig:
+          HeaderBehavior: "allViewerAndWhitelistCloudFront"
+          Headers:
+          - "CloudFront-Viewer-Time-Zone"
+          - "CloudFront-Viewer-Address"
+          - "CloudFront-Viewer-Country"
+          - "CloudFront-Is-IOS-Viewer"
+          - "CloudFront-Is-Tablet-Viewer"
+          - "CloudFront-Forwarded-Proto"
+          - "CloudFront-Viewer-Country-Name"
+          - "CloudFront-Is-Mobile-Viewer"
+          - "CloudFront-Is-SmartTV-Viewer"
+          - "CloudFront-Viewer-Country-Region"
+          - "CloudFront-Is-Android-Viewer"
+          - "CloudFront-Viewer-Country-Region-Name"
+          - "CloudFront-Viewer-City"
+          - "CloudFront-Viewer-Latitude"
+          - "CloudFront-Viewer-Longitude"
+          - "CloudFront-Viewer-Http-Version"
+          - "CloudFront-Viewer-Postal-Code"
+          - "CloudFront-Viewer-ASN"
+          - "CloudFront-Is-Desktop-Viewer"
+          - "CloudFront-Viewer-Metro-Code"
+          - "CloudFront-Viewer-TLS"
+        CookiesConfig:
+          CookieBehavior: "all"
+        Name: "Managed-AllViewerAndCloudFrontHeaders-2022-06"
+  EventsEventBusDefault:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Events::EventBus"
+    DeletionPolicy: "Retain"
+    Properties:
+      Tags: []
+      Name: "default"
+  LogsLogStreamEcsocrcontainer312515a8a756456a96f03c18c1ceb4e5:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/312515a8a756456a96f03c18c1ceb4e5"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  CloudFrontCachePolicyI5:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Policy for Amplify Origin"
+        MinTTL: 2
+        MaxTTL: 600
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "all"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "CloudFront-Viewer-Country"
+            - "Host"
+          CookiesConfig:
+            CookieBehavior: "all"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 2
+        Name: "Managed-Amplify"
+  LogsLogStream20250921LATEST7e3155769e014ccd823fc18312454fa5:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/21/[$LATEST]7e3155769e014ccd823fc18312454fa5"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  LambdaFunctionMedpalpdfplumberocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 512
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 60
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionMedpalpdfplumberocrCodeS3ObjectVersionwn7VL"
+        S3Bucket:
+          Ref: "LambdaFunctionMedpalpdfplumberocrCodeS3BucketRIQdL"
+        ZipFile:
+          Ref: "LambdaFunctionMedpalpdfplumberocrCodeZipFileAtVqt"
+        ImageUri:
+          Ref: "LambdaFunctionMedpalpdfplumberocrCodeImageUrilL7Ea"
+        S3Key:
+          Ref: "LambdaFunctionMedpalpdfplumberocrCodeS3Key3Npk2"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleMedpaltesseractlambdarole"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "medpal-pdfplumber-ocr"
+      Runtime: "python3.9"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/medpal-pdfplumber-ocr"
+      RecursiveLoop: "Terminate"
+      Environment:
+        Variables:
+          DYNAMODB_TABLE_NAME: "OCR-Text-Extraction-Table"
+          S3_BUCKET_NAME: "testing-pdf-files-medpal"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  IAMRoleAWSServiceRoleForCloudTrail:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/cloudtrail.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForCloudTrail"
+      Description: "This service-linked role is used for supporting organization trail\
+        \ feature"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "cloudtrail.amazonaws.com"
+  CloudFrontOriginRequestPolicyTy:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::OriginRequestPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      OriginRequestPolicyConfig:
+        QueryStringsConfig:
+          QueryStringBehavior: "none"
+        Comment: "Policy for custom origin with CORS"
+        HeadersConfig:
+          HeaderBehavior: "whitelist"
+          Headers:
+          - "origin"
+        CookiesConfig:
+          CookieBehavior: "none"
+        Name: "Managed-CORS-CustomOrigin"
+  EC2EIPAssociation:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::EIPAssociation"
+    DeletionPolicy: "Retain"
+    Properties:
+      PrivateIpAddress:
+        Fn::GetAtt:
+        - "EC2NetworkInterfaceXm"
+        - "PrimaryPrivateIpAddress"
+      NetworkInterfaceId:
+        Ref: "EC2NetworkInterfaceXm"
+      EIP: "3.213.221.67"
+      AllocationId: "eipalloc-00efe2d7f169efbc7"
+  LogsLogStream20250920LATEST01e81c8452a7478ab8f64d5de962c489:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]01e81c8452a7478ab8f64d5de962c489"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalpdfplumberocr"
+  IAMRoleAWSServiceRoleForAPIGateway:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/ops.apigateway.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/APIGatewayServiceRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForAPIGateway"
+      Description: "The Service Linked Role is used by Amazon API Gateway."
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "ops.apigateway.amazonaws.com"
+  LogsLogStreamEcsocrcontainer78417d28b0bb446ba6450912035c4a0c:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/78417d28b0bb446ba6450912035c4a0c"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  CloudFrontOriginRequestPolicyFT:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::OriginRequestPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      OriginRequestPolicyConfig:
+        QueryStringsConfig:
+          QueryStringBehavior: "none"
+        Comment: "Policy for an origin to forward the Host header only"
+        HeadersConfig:
+          HeaderBehavior: "whitelist"
+          Headers:
+          - "host"
+        CookiesConfig:
+          CookieBehavior: "none"
+        Name: "Managed-HostHeaderOnly"
+  CloudFrontCachePolicyFl:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Amplify cache policy for image optimization"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "all"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "RSC"
+            - "Accept"
+            - "CloudFront-Viewer-Country"
+            - "X-Amplify-Dpl"
+            - "Host"
+          CookiesConfig:
+            Cookies:
+            - "__dpl"
+            CookieBehavior: "whitelist"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "Managed-Amplify-ImageOptimization-V2"
+  LogsLogStreamEcsocrcontainerc1f1130174a64650b52f80b98b124099:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/c1f1130174a64650b52f80b98b124099"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  EC2Route:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Route"
+    DeletionPolicy: "Retain"
+    Properties:
+      RouteTableId:
+        Ref: "EC2RouteTable"
+      DestinationCidrBlock: "10.0.0.0/16"
+      GatewayId: "local"
+      VpcEndpointId: "local"
+  IAMRoleAWSServiceRoleForTrustedAdvisor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/trustedadvisor.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForTrustedAdvisor"
+      Description: "Access for the AWS Trusted Advisor Service to help reduce cost,\
+        \ increase performance, and improve security of your AWS environment."
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "trustedadvisor.amazonaws.com"
+  CloudFrontCachePolicy:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Policy for Elemental MediaPackage Origin"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStrings:
+            - "aws.manifestfilter"
+            - "start"
+            - "end"
+            - "m"
+            QueryStringBehavior: "whitelist"
+          EnableAcceptEncodingBrotli: false
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "origin"
+          CookiesConfig:
+            CookieBehavior: "none"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 86400
+        Name: "Managed-Elemental-MediaPackage"
+  LogsLogStream20250920LATESTcfcab4a1029249718379b179ff419633:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]cfcab4a1029249718379b179ff419633"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalpdfplumberocr"
+  LogsLogStreamEcsocrcontainer0c55a3915b5f4b809849cef2f716da5f:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/0c55a3915b5f4b809849cef2f716da5f"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  S3BucketPolicyTestingpdffilesmedpal:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::BucketPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      Bucket:
+        Ref: "S3BucketTestingpdffilesmedpal"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:s3:::testing-pdf-files-medpal/*"
+          Action: "s3:GetObject"
+          Effect: "Allow"
+          Principal: "*"
+          Sid: "PublicReadGetObject"
+  EC2NetworkInterfaceAttachment:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterfaceAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      NetworkInterfaceId: "eni-08a38d40b3ad3015f"
+      DeviceIndex: "1"
+      DeleteOnTermination: false
+  EC2VPCDHCPOptionsAssociation:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VPCDHCPOptionsAssociation"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-0ae95c8413b473ab9"
+      DhcpOptionsId:
+        Ref: "EC2DHCPOptions"
+  LambdaFunctionTRY:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 128
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 3
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionTRYCodeS3ObjectVersion63Qas"
+        S3Bucket:
+          Ref: "LambdaFunctionTRYCodeS3BucketmYccn"
+        ZipFile:
+          Ref: "LambdaFunctionTRYCodeZipFile9cBvr"
+        ImageUri:
+          Ref: "LambdaFunctionTRYCodeImageUri5T5ry"
+        S3Key:
+          Ref: "LambdaFunctionTRYCodeS3KeyESfHB"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleTRYroledfhgaaxi"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "TRY"
+      Runtime: "python3.13"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/TRY"
+      RecursiveLoop: "Terminate"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  LogsLogStream20250920LATESTbb7314b8a3fe4743993800c7228d0fd8:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]bb7314b8a3fe4743993800c7228d0fd8"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalinstantocr"
+  ECRRepositoryPaddleocrlambdacontainer:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECR::Repository"
+    DeletionPolicy: "Retain"
+    Properties:
+      ImageScanningConfiguration:
+        ScanOnPush: true
+      RepositoryName: "paddleocr-lambda-container"
+      EncryptionConfiguration:
+        EncryptionType: "AES256"
+      RepositoryPolicyText:
+        Version: "2008-10-17"
+        Statement:
+        - Condition:
+            StringLike:
+              aws:sourceArn: "arn:aws:lambda:us-east-1:862070608712:function:*"
+          Action:
+          - "ecr:BatchGetImage"
+          - "ecr:GetDownloadUrlForLayer"
+          - "ecr:SetRepositoryPolicy"
+          - "ecr:DeleteRepositoryPolicy"
+          - "ecr:GetRepositoryPolicy"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+          Sid: "LambdaECRImageRetrievalPolicy"
+      Tags: []
+      ImageTagMutability: "MUTABLE"
+  EFSFileSystem:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EFS::FileSystem"
+    DeletionPolicy: "Retain"
+    Properties:
+      PerformanceMode: "generalPurpose"
+      Encrypted: false
+      FileSystemTags: []
+      FileSystemProtection:
+        ReplicationOverwriteProtection: "ENABLED"
+      LifecyclePolicies: []
+      ThroughputMode: "bursting"
+      BackupPolicy:
+        Status: "DISABLED"
+  LogsLogStreamEcsocrcontainer10261ebffd5942da8c65b7ed8e192572:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/10261ebffd5942da8c65b7ed8e192572"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStream20250920LATEST0e9fc5da113f4c95b079f19fe98e9672:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]0e9fc5da113f4c95b079f19fe98e9672"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1feeding"
+  CloudFrontCachePolicyIj:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Policy for origins that return Cache-Control headers. Query strings\
+          \ are not included in the cache key."
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "none"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "x-method-override"
+            - "origin"
+            - "host"
+            - "x-http-method"
+            - "x-http-method-override"
+          CookiesConfig:
+            CookieBehavior: "all"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "UseOriginCacheControlHeaders"
+  ElastiCacheUser:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ElastiCache::User"
+    DeletionPolicy: "Retain"
+    Properties:
+      UserName: "default"
+      UserId: "default"
+      Engine: "redis"
+      Tags: []
+  S3BucketTextractconsoleuseast1e3fbc1fdd69a4bdca82858ac5393f9ba:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::Bucket"
+    DeletionPolicy: "Retain"
+    Properties:
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        BlockPublicAcls: true
+      LifecycleConfiguration:
+        TransitionDefaultMinimumObjectSize: "all_storage_classes_128K"
+        Rules:
+        - Status: "Enabled"
+          Id: "Textract-Console-Entire-Bucket-Lifecycle-Rule"
+          Prefix: ""
+          ExpirationInDays: 90
+        - Status: "Enabled"
+          Id: "Textract-Job-Metadata-Delete-Lifecycle"
+          Prefix: "textract-artifact_DO-NOT-DELETE"
+          ExpirationInDays: 14
+      BucketName: "textract-console-us-east-1-e3fbc1fd-d69a-4bdc-a828-58ac5393f9ba"
+      CorsConfiguration:
+        CorsRules:
+        - MaxAge: 3000
+          AllowedMethods:
+          - "PUT"
+          - "GET"
+          AllowedOrigins:
+          - "*"
+          AllowedHeaders:
+          - "*"
+      OwnershipControls:
+        Rules:
+        - ObjectOwnership: "BucketOwnerPreferred"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+        - BucketKeyEnabled: false
+          ServerSideEncryptionByDefault:
+            SSEAlgorithm: "AES256"
+  ECSClusterOcrcluster:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::Cluster"
+    DeletionPolicy: "Retain"
+    Properties:
+      CapacityProviders: []
+      ClusterName: "ocr-cluster"
+      ClusterSettings:
+      - Value: "disabled"
+        Name: "containerInsights"
+      DefaultCapacityProviderStrategy: []
+      Tags: []
+  LambdaPermissionFunctiondeekseekR1testMr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionDeekseekR1test"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn: "arn:aws:execute-api:us-east-1:862070608712:ev559asb3h/*/GET/analyze-medical-data"
+      Principal: "apigateway.amazonaws.com"
+  MemoryDBACLOpenaccess:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::MemoryDB::ACL"
+    DeletionPolicy: "Retain"
+    Properties:
+      ACLName: "open-access"
+      Tags: []
+      UserNames:
+      - "default"
+  IAMRoleLambdaPaddleOCRRole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      MaxSessionDuration: 3600
+      RoleName: "LambdaPaddleOCRRole"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+            Action:
+            - "logs:CreateLogGroup"
+            - "logs:CreateLogStream"
+            - "logs:PutLogEvents"
+            Effect: "Allow"
+          - Resource: "arn:aws:s3:::testing-pdf-files-medpal/*"
+            Action: "s3:GetObject"
+            Effect: "Allow"
+          - Resource: "arn:aws:dynamodb:us-east-1:862070608712:table/OCR-Text-Extraction-Table"
+            Action: "dynamodb:PutItem"
+            Effect: "Allow"
+        PolicyName: "LambdaPaddleOCRPolicy"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  LogsLogStreamEcsocrcontaineraa1d738e57ae485a893e49404dd24d34:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/aa1d738e57ae485a893e49404dd24d34"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  MemoryDBParameterGroupDefaultmemorydbredis7searchpreview:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::MemoryDB::ParameterGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      ParameterGroupName: "default.memorydb-redis7.search.preview"
+      Family: "memorydb_redis7.search.preview"
+      Description: "Default parameter group for memorydb_redis7.search.preview"
+  CloudFrontCachePolicyXx:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Default Amplify cache policy without cookies"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "all"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "Accept"
+            - "CloudFront-Viewer-Country"
+            - "Host"
+          CookiesConfig:
+            CookieBehavior: "none"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "Managed-Amplify-DefaultNoCookies"
+  LogsLogStream20250920LATEST4d9ce290dc334939a8a1cd1414c51516:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]4d9ce290dc334939a8a1cd1414c51516"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalpdfplumberocr"
+  IAMRoleAWSReservedSSOawsisbIsbManagersPSb7f542a281058e22:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-reserved/sso.amazonaws.com/ap-southeast-1/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
+      MaxSessionDuration: 43200
+      RoleName: "AWSReservedSSO_awsisb_IsbManagersPS_b7f542a281058e22"
+      Description: "Manager PermissionSet for the Innovation Sandbox on AWS solution"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Condition:
+            StringEquals:
+              SAML:aud: "https://signin.aws.amazon.com/saml"
+          Action:
+          - "sts:AssumeRoleWithSAML"
+          - "sts:TagSession"
+          Effect: "Allow"
+          Principal:
+            Federated: "arn:aws:iam::862070608712:saml-provider/AWSSSO_6a8cdf1bde1acccc_DO_NOT_DELETE"
+  IAMRoleMedpaltesseractlambdarole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
+      MaxSessionDuration: 3600
+      RoleName: "medpal-tesseract-lambda-role"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:s3:::testing-pdf-files-medpal/*"
+            Action:
+            - "s3:GetObject"
+            - "s3:GetObjectMetadata"
+            Effect: "Allow"
+          - Resource: "arn:aws:dynamodb:us-east-1:*:table/OCR-Text-Extraction-Table"
+            Action:
+            - "dynamodb:PutItem"
+            - "dynamodb:GetItem"
+            - "dynamodb:UpdateItem"
+            - "dynamodb:Query"
+            - "dynamodb:Scan"
+            Effect: "Allow"
+        PolicyName: "medpal-tesseract-policy"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  CloudFrontCachePolicyYc:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Policy with caching disabled"
+        MinTTL: 0
+        MaxTTL: 0
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "none"
+          EnableAcceptEncodingBrotli: false
+          HeadersConfig:
+            HeaderBehavior: "none"
+          CookiesConfig:
+            CookieBehavior: "none"
+          EnableAcceptEncodingGzip: false
+        DefaultTTL: 0
+        Name: "Managed-CachingDisabled"
+  IAMRoleDeekseekR1feedingrolensxstky6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::862070608712:policy/service-role/AWSLambdaBasicExecutionRole-eda111b0-c286-4b95-a43f-5b9e2da54957"
+      MaxSessionDuration: 3600
+      RoleName: "deekseekR1-feeding-role-nsxstky6"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource:
+            - "arn:aws:dynamodb:*:*:table/medpal-history"
+            - "arn:aws:dynamodb:*:*:table/OCR-Text-Extraction-Table"
+            Action:
+            - "dynamodb:Scan"
+            - "dynamodb:Query"
+            - "dynamodb:GetItem"
+            Effect: "Allow"
+          - Resource: "*"
+            Action:
+            - "bedrock:InvokeModel"
+            - "bedrock:ListFoundationModels"
+            Effect: "Allow"
+          - Resource: "arn:aws:logs:*:*:*"
+            Action:
+            - "logs:CreateLogGroup"
+            - "logs:CreateLogStream"
+            - "logs:PutLogEvents"
+            Effect: "Allow"
+        PolicyName: "DynamoDB-Bedrock-access"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  LogsLogStream20250920LATEST8e858f11ff0344f8a1d03acf3c10861c:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]8e858f11ff0344f8a1d03acf3c10861c"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalenhancedocr"
+  CloudFrontOriginRequestPolicyU1:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::OriginRequestPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      OriginRequestPolicyConfig:
+        QueryStringsConfig:
+          QueryStringBehavior: "all"
+        Comment: "Policy to forward all parameters in viewer requests except for the\
+          \ Host header"
+        HeadersConfig:
+          HeaderBehavior: "allExcept"
+          Headers:
+          - "host"
+        CookiesConfig:
+          CookieBehavior: "all"
+        Name: "Managed-AllViewerExceptHostHeader"
+  EC2NetworkInterfaceAttachmentTH:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterfaceAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      NetworkInterfaceId: "eni-09698439d07833fd8"
+      DeviceIndex: "1"
+      DeleteOnTermination: false
+  LambdaPermissionFunctionocrpaddle:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionOcrpaddle"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+      SourceAccount: "862070608712"
+  CloudFrontOriginRequestPolicySu:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::OriginRequestPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      OriginRequestPolicyConfig:
+        QueryStringsConfig:
+          QueryStringBehavior: "none"
+        Comment: "Policy to forward user-agent and referer headers to origin"
+        HeadersConfig:
+          HeaderBehavior: "whitelist"
+          Headers:
+          - "referer"
+          - "user-agent"
+        CookiesConfig:
+          CookieBehavior: "none"
+        Name: "Managed-UserAgentRefererHeaders"
+  LogsLogStreamEcsocrcontainerf24752f537b94326a0df3db4bd16f7cb:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/f24752f537b94326a0df3db4bd16f7cb"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStream20250920LATESTc6e2a8a0f6c14fbe83a5912ab18938f0:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]c6e2a8a0f6c14fbe83a5912ab18938f0"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  EC2SecurityGroupEX:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      GroupDescription: "Security group for Fargate OCR task - allows outbound traffic"
+      GroupName: "FargateOCRSecurityGroup"
+      VpcId: "vpc-0ae95c8413b473ab9"
+      SecurityGroupEgress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "tcp"
+        FromPort: 80
+        ToPort: 80
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+        FromPort: -1
+        ToPort: -1
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "tcp"
+        FromPort: 443
+        ToPort: 443
+  LogsLogStream20250920LATEST30d2630673fc4b62b742327f3abcf558:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]30d2630673fc4b62b742327f3abcf558"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdapaddleocrprocessor"
+  IAMRoleAWSServiceRoleForCloudFormationStackSetsOrgMember:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForCloudFormationStackSetsOrgMember"
+      Description: "Service linked role for CloudFormation StackSets (Organization\
+        \ Member)"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "member.org.stacksets.cloudformation.amazonaws.com"
+  LambdaPermissionFunctionpaddleocrprocessorWf:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionPaddleocrprocessor"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+      SourceAccount: "862070608712"
+  LogsLogStream20250920LATESTf886b75de5e34013b0f97339b9f3ac94:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]f886b75de5e34013b0f97339b9f3ac94"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1feeding"
+  LogsLogStream20250920LATESTb46535568a194025b86d59ea3d709909:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]b46535568a194025b86d59ea3d709909"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdapaddleocrprocessor"
+  LogsLogStreamEcsocrcontainer8f14f62bdee34d4fb2042e3117ba2ca8:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/8f14f62bdee34d4fb2042e3117ba2ca8"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStream20250920LATEST551ed25eb1184b2081c2261387868a04:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]551ed25eb1184b2081c2261387868a04"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1test"
+  LogsLogStream20250920LATESTbe5e8c76ff994436969ff02a925ac540:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]be5e8c76ff994436969ff02a925ac540"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalenhancedocr"
+  LambdaFunctionDeekseekR1feeding:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 128
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 300
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionDeekseekR1feedingCodeS3ObjectVersionnq4Km"
+        S3Bucket:
+          Ref: "LambdaFunctionDeekseekR1feedingCodeS3BucketBz32P"
+        ZipFile:
+          Ref: "LambdaFunctionDeekseekR1feedingCodeZipFile799p6"
+        ImageUri:
+          Ref: "LambdaFunctionDeekseekR1feedingCodeImageUridUkLw"
+        S3Key:
+          Ref: "LambdaFunctionDeekseekR1feedingCodeS3KeyonJ3W"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleDeekseekR1feedingrolensxstky6"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "deekseekR1-feeding"
+      Runtime: "python3.11"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/deekseekR1-feeding"
+      RecursiveLoop: "Terminate"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  IAMRoleTRYrolemn98a8c6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::862070608712:policy/service-role/AWSLambdaBasicExecutionRole-106db279-13e1-4532-8fd1-6b2b80fdee9e"
+      MaxSessionDuration: 3600
+      RoleName: "TRY-role-mn98a8c6"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  EC2SubnetNetworkAclAssociation:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Retain"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl"
+      SubnetId: "subnet-076514b43e1cac8ab"
+  LogsLogStreamEcsocrcontainerbe4104be8de34e4c94d68d1f8f3fdcb5:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/be4104be8de34e4c94d68d1f8f3fdcb5"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  MemoryDBUserDefault:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::MemoryDB::User"
+    DeletionPolicy: "Retain"
+    Properties:
+      Tags: []
+      UserName: "default"
+  LogsLogGroupawslambdamedpalinstantocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/medpal-instant-ocr"
+      DataProtectionPolicy: {}
+  LogsLogStream20250920LATEST51c77ad6df6245869e0328760977328f:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]51c77ad6df6245869e0328760977328f"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  LogsLogStream20250920LATEST01db51b9f6eb47afa7e8e3d14cff11b3:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]01db51b9f6eb47afa7e8e3d14cff11b3"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  LogsLogStream20250920LATESTfce8171b33e1404cb3be53340fe02ee7:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]fce8171b33e1404cb3be53340fe02ee7"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdaocrpaddle"
+  CloudFrontCachePolicyLg:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Default Amplify cache policy without cookies"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "all"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "RSC"
+            - "Accept"
+            - "CloudFront-Viewer-Country"
+            - "X-Amplify-Dpl"
+            - "Host"
+          CookiesConfig:
+            Cookies:
+            - "__dpl"
+            CookieBehavior: "whitelist"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "Managed-Amplify-DefaultNoCookies-V2"
+  LambdaPermissionFunctionpdftextextractor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionPdftextextractor"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+  CloudFrontOriginRequestPolicyR6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::OriginRequestPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      OriginRequestPolicyConfig:
+        QueryStringsConfig:
+          QueryStringBehavior: "none"
+        Comment: "Policy for S3 origin with CORS"
+        HeadersConfig:
+          HeaderBehavior: "whitelist"
+          Headers:
+          - "origin"
+          - "access-control-request-headers"
+          - "access-control-request-method"
+        CookiesConfig:
+          CookieBehavior: "none"
+        Name: "Managed-CORS-S3Origin"
+  LogsLogStream20250921LATESTef39267252b04425a009d01bf85e8f50:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/21/[$LATEST]ef39267252b04425a009d01bf85e8f50"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  LogsLogStream20250920LATEST88dc5ad140de4ed38d0772819d4ef6bf:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]88dc5ad140de4ed38d0772819d4ef6bf"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1test"
+  LogsLogStreamEcsocrcontainer3e93bc5f86b24431a89b9cb42e2899a0:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/3e93bc5f86b24431a89b9cb42e2899a0"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LambdaVersionFunctionpdftextextractor1:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Version"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Ref: "LambdaFunctionPdftextextractor"
+      Description: "Extract text from PDF files using pdfplumber and store in DynamoDB"
+      RuntimePolicy:
+        UpdateRuntimeOn: "Auto"
+      CodeSha256: "ROg9p/zhme2zei5dAhz9ypz2sljeGGXaMgeykKUKV+g="
+  LogsLogStreamEcsocrcontainer1c77161362a8480194195752b6bbd2bb:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/1c77161362a8480194195752b6bbd2bb"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LambdaPermissionFunctionmedpalpdfplumberocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionMedpalpdfplumberocr"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+  KMSKey:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::KMS::Key"
+    DeletionPolicy: "Retain"
+    Properties:
+      Origin: "AWS_KMS"
+      MultiRegion: false
+      Description: "Default key that protects my Lambda functions when no other key\
+        \ is defined"
+      KeyPolicy:
+        Version: "2012-10-17"
+        Statement:
+        - Condition:
+            StringEquals:
+              kms:CallerAccount: "862070608712"
+              kms:ViaService: "lambda.us-east-1.amazonaws.com"
+          Resource: "*"
+          Action:
+          - "kms:Encrypt"
+          - "kms:Decrypt"
+          - "kms:ReEncrypt*"
+          - "kms:GenerateDataKey*"
+          - "kms:CreateGrant"
+          - "kms:DescribeKey"
+          Effect: "Allow"
+          Principal:
+            AWS: "*"
+          Sid: "Allow access through AWS Lambda for all principals in the account\
+            \ that are authorized to use AWS Lambda"
+        - Resource: "*"
+          Action:
+          - "kms:Describe*"
+          - "kms:Get*"
+          - "kms:List*"
+          - "kms:RevokeGrant"
+          Effect: "Allow"
+          Principal:
+            AWS: "arn:aws:iam::862070608712:root"
+          Sid: "Allow direct access to key metadata to the account"
+        Id: "auto-awslambda"
+      KeySpec: "SYMMETRIC_DEFAULT"
+      Enabled: true
+      EnableKeyRotation: true
+      KeyUsage: "ENCRYPT_DECRYPT"
+      Tags: []
+  IAMRoleAWSServiceRoleForAmazonElasticFileSystem:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/elasticfilesystem.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/AmazonElasticFileSystemServiceRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForAmazonElasticFileSystem"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "elasticfilesystem.amazonaws.com"
+  LambdaFunctionPdfProcessor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 128
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 3
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionPdfProcessorCodeS3ObjectVersionbV6tn"
+        S3Bucket:
+          Ref: "LambdaFunctionPdfProcessorCodeS3Bucketc3UCf"
+        ZipFile:
+          Ref: "LambdaFunctionPdfProcessorCodeZipFile42cY1"
+        ImageUri:
+          Ref: "LambdaFunctionPdfProcessorCodeImageUritE0On"
+        S3Key:
+          Ref: "LambdaFunctionPdfProcessorCodeS3KeyTUqrB"
+      Role:
+        Fn::GetAtt:
+        - "IAMRolePdfProcessorrole8kbnfqdx"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "pdfProcessor"
+      Runtime: "python3.12"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/pdfProcessor"
+      RecursiveLoop: "Terminate"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  LogsLogStreamEcsocrcontainer16fa70bbb5a641a5b49c0f359e80561b:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/16fa70bbb5a641a5b49c0f359e80561b"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStreamEcsocrcontainer2faf6c35397640329c72e096b52d0d82:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/2faf6c35397640329c72e096b52d0d82"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  CloudFrontCachePolicyMs:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Amplify cache policy for image optimization"
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "all"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "Authorization"
+            - "Accept"
+            - "Host"
+          CookiesConfig:
+            CookieBehavior: "none"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "Managed-Amplify-ImageOptimization"
+  IAMRoleAWSServiceRoleForOrganizations:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/organizations.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForOrganizations"
+      Description: "Service-linked role used by AWS Organizations to enable integration\
+        \ of other AWS services with Organizations."
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "organizations.amazonaws.com"
+  LogsLogStream20250920LATEST1c2a4ddd13ef40d2aca910b6f86864ab:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]1c2a4ddd13ef40d2aca910b6f86864ab"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  S3StorageLens:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::StorageLens"
+    DeletionPolicy: "Retain"
+    Properties:
+      StorageLensConfiguration:
+        AccountLevel:
+          BucketLevel: {}
+        IsEnabled: true
+        Id: "default-account-dashboard"
+      Tags: []
+  IAMRoleOrganizationAccountAccessRole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
+      MaxSessionDuration: 3600
+      RoleName: "OrganizationAccountAccessRole"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            AWS: "arn:aws:iam::717408097266:root"
+  LogsLogStreamEcsocrcontainer81a7dee9d996485588dec972af176303:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/81a7dee9d996485588dec972af176303"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  IAMManagedPolicyPolicyserviceroleAWSLambdaBasicExecutionRole192189baed8b4b678fa3b5aae0b122cf:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "AWSLambdaBasicExecutionRole-192189ba-ed8b-4b67-8fa3-b5aae0b122cf"
+      Path: "/service-role/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+          Action: "logs:CreateLogGroup"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:logs:us-east-1:862070608712:log-group:/aws/lambda/TRY:*"
+          Action:
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRoleTRYroledfhgaaxi"
+      Users: []
+  LambdaPermissionFunctionpaddleocrprocessorIQ:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionPaddleocrprocessor"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+      SourceAccount: "862070608712"
+  MemoryDBParameterGroupDefaultmemorydbvalkey7search:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::MemoryDB::ParameterGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      ParameterGroupName: "default.memorydb-valkey7.search"
+      Family: "memorydb_valkey7"
+      Description: "Customized default parameter group for memorydb_valkey7 with search-enabled\
+        \ yes"
+  IAMRoleAWSReservedSSOawsisbIsbUsersPS508240a867db68d9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-reserved/sso.amazonaws.com/ap-southeast-1/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
+      MaxSessionDuration: 43200
+      RoleName: "AWSReservedSSO_awsisb_IsbUsersPS_508240a867db68d9"
+      Description: "User PermissionSet for the Innovation Sandbox on AWS solution"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Condition:
+            StringEquals:
+              SAML:aud: "https://signin.aws.amazon.com/saml"
+          Action:
+          - "sts:AssumeRoleWithSAML"
+          - "sts:TagSession"
+          Effect: "Allow"
+          Principal:
+            Federated: "arn:aws:iam::862070608712:saml-provider/AWSSSO_6a8cdf1bde1acccc_DO_NOT_DELETE"
+  IAMManagedPolicyPolicyserviceroleAWSLambdaBasicExecutionRoledab38069e8624ea8bc811dc012281731:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "AWSLambdaBasicExecutionRole-dab38069-e862-4ea8-bc81-1dc012281731"
+      Path: "/service-role/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+          Action: "logs:CreateLogGroup"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:logs:us-east-1:862070608712:log-group:/aws/lambda/pdfProcessor:*"
+          Action:
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRolePdfProcessorrole8kbnfqdx"
+      Users: []
+  LogsLogGroupawslambdadeekseekR1test:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/deekseekR1-test"
+      DataProtectionPolicy: {}
+  DynamoDBTableMedpalhistory:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::DynamoDB::Table"
+    DeletionPolicy: "Retain"
+    Properties:
+      SSESpecification:
+        SSEEnabled: false
+      TableName: "medpal-history"
+      AttributeDefinitions:
+      - AttributeType: "S"
+        AttributeName: "ChatSessionId"
+      - AttributeType: "S"
+        AttributeName: "Timestamp"
+      ContributorInsightsSpecification:
+        Enabled: false
+      BillingMode: "PAY_PER_REQUEST"
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: false
+      WarmThroughput:
+        ReadUnitsPerSecond: 12000
+        WriteUnitsPerSecond: 4000
+      KeySchema:
+      - KeyType: "HASH"
+        AttributeName: "ChatSessionId"
+      - KeyType: "RANGE"
+        AttributeName: "Timestamp"
+      DeletionProtectionEnabled: false
+      TableClass: "STANDARD"
+      Tags:
+      - Value: "Shaun"
+        Key: "Owner"
+      - Value: "MedicalQueryTool"
+        Key: "Project"
+      - Value: "Hackathon"
+        Key: "Environment"
+      TimeToLiveSpecification:
+        Enabled: false
+  LambdaPermissionFunctionpaddleocrprocessor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionPaddleocrprocessor"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+      SourceAccount: "862070608712"
+  IAMRoleECSTaskRoleForOCR:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      MaxSessionDuration: 3600
+      RoleName: "ECSTaskRoleForOCR"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:s3:::testing-pdf-files-medpal/*"
+            Action:
+            - "s3:GetObject"
+            - "s3:GetObjectMetadata"
+            Effect: "Allow"
+          - Resource: "arn:aws:dynamodb:us-east-1:862070608712:table/OCR-Text-Extraction-Table"
+            Action:
+            - "dynamodb:PutItem"
+            - "dynamodb:GetItem"
+            - "dynamodb:UpdateItem"
+            - "dynamodb:DescribeTable"
+            Effect: "Allow"
+        PolicyName: "S3-Dynamo-Access-For-OCR"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "ecs-tasks.amazonaws.com"
+  LogsLogStream20250920LATEST5568b2adc08447b4a091ac90d6bfa28c:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]5568b2adc08447b4a091ac90d6bfa28c"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  IAMRoleAWSReservedSSOawsisbIsbAdminsPS1ad4219799ccd1cc:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-reserved/sso.amazonaws.com/ap-southeast-1/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
+      MaxSessionDuration: 43200
+      RoleName: "AWSReservedSSO_awsisb_IsbAdminsPS_1ad4219799ccd1cc"
+      Description: "Admin PermissionSet for the Innovation Sandbox on AWS solution"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Condition:
+            StringEquals:
+              SAML:aud: "https://signin.aws.amazon.com/saml"
+          Action:
+          - "sts:AssumeRoleWithSAML"
+          - "sts:TagSession"
+          Effect: "Allow"
+          Principal:
+            Federated: "arn:aws:iam::862070608712:saml-provider/AWSSSO_6a8cdf1bde1acccc_DO_NOT_DELETE"
+  DynamoDBTableOCRTextExtractionTableTest:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::DynamoDB::Table"
+    DeletionPolicy: "Retain"
+    Properties:
+      SSESpecification:
+        SSEEnabled: false
+      TableName: "OCR-Text-Extraction-Table-Test"
+      AttributeDefinitions:
+      - AttributeType: "S"
+        AttributeName: "documentId"
+      ContributorInsightsSpecification:
+        Enabled: false
+      BillingMode: "PAY_PER_REQUEST"
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: false
+      WarmThroughput:
+        ReadUnitsPerSecond: 12000
+        WriteUnitsPerSecond: 4000
+      KeySchema:
+      - KeyType: "HASH"
+        AttributeName: "documentId"
+      DeletionProtectionEnabled: false
+      TableClass: "STANDARD"
+      Tags:
+      - Value: "MedicalOCR"
+        Key: "Project"
+      TimeToLiveSpecification:
+        Enabled: false
+  LogsLogStreamEcsocrcontainer54522b71d42d472d9d792c60ceb7dceb:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/54522b71d42d472d9d792c60ceb7dceb"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStream20250920LATESTb5bbe9a59d7e42e081f6cd28c16c0754:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]b5bbe9a59d7e42e081f6cd28c16c0754"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdaTRY"
+  EC2RouteTable:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-0ae95c8413b473ab9"
+  IAMRoleAWSServiceRoleForSSO:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/sso.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForSSO"
+      Description: "Service-linked role used by AWS SSO to manage AWS resources, including\
+        \ IAM roles, policies and SAML IdP on your behalf."
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "sso.amazonaws.com"
+  LogsLogGroupawslambdamedpalpdfplumberocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/medpal-pdfplumber-ocr"
+      DataProtectionPolicy: {}
+  LogsLogGroupawslambdadeekseekR1feeding:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/deekseekR1-feeding"
+      DataProtectionPolicy: {}
+  IAMRolePdftextextractorexecutionrole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      MaxSessionDuration: 3600
+      RoleName: "pdf-text-extractor-execution-role"
+      Description: "Execution role for pdf-text-extractor Lambda function"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:logs:*:*:*"
+            Action:
+            - "logs:CreateLogGroup"
+            - "logs:CreateLogStream"
+            - "logs:PutLogEvents"
+            Effect: "Allow"
+          - Resource: "arn:aws:s3:::testing-pdf-files-medpal/*"
+            Action:
+            - "s3:GetObject"
+            Effect: "Allow"
+          - Resource: "arn:aws:dynamodb:*:*:table/OCR-Text-Extraction-Table*"
+            Action:
+            - "dynamodb:PutItem"
+            - "dynamodb:GetItem"
+            - "dynamodb:UpdateItem"
+            - "dynamodb:Query"
+            - "dynamodb:Scan"
+            Effect: "Allow"
+        PolicyName: "pdf-text-extractor-policy"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  CloudFrontOriginRequestPolicyLx:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::OriginRequestPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      OriginRequestPolicyConfig:
+        QueryStringsConfig:
+          QueryStringBehavior: "all"
+        Comment: "Policy for Elemental MediaTailor Origin"
+        HeadersConfig:
+          HeaderBehavior: "whitelist"
+          Headers:
+          - "origin"
+          - "access-control-request-headers"
+          - "x-forwarded-for"
+          - "access-control-request-method"
+          - "user-agent"
+        CookiesConfig:
+          CookieBehavior: "none"
+        Name: "Managed-Elemental-MediaTailor-PersonalizedManifests"
+  LogsLogStreamEcsocrcontainer22a7981156644cd2a204ad11d691825f:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/22a7981156644cd2a204ad11d691825f"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  S3BucketTestingpdffilesmedpal:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::Bucket"
+    DeletionPolicy: "Retain"
+    Properties:
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: false
+        IgnorePublicAcls: false
+        BlockPublicPolicy: false
+        BlockPublicAcls: false
+      BucketName: "testing-pdf-files-medpal"
+      OwnershipControls:
+        Rules:
+        - ObjectOwnership: "BucketOwnerPreferred"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+        - BucketKeyEnabled: true
+          ServerSideEncryptionByDefault:
+            SSEAlgorithm: "AES256"
+  LambdaFunctionPdftextextractor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 512
+      Description: "Extract text from PDF files using pdfplumber and store in DynamoDB"
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 300
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionPdftextextractorCodeS3ObjectVersionMkYKv"
+        S3Bucket:
+          Ref: "LambdaFunctionPdftextextractorCodeS3BucketUKvav"
+        ZipFile:
+          Ref: "LambdaFunctionPdftextextractorCodeZipFilexK2YM"
+        ImageUri:
+          Ref: "LambdaFunctionPdftextextractorCodeImageUriYk5g7"
+        S3Key:
+          Ref: "LambdaFunctionPdftextextractorCodeS3KeyFmMKS"
+      Role:
+        Fn::GetAtt:
+        - "IAMRolePdftextextractorexecutionrole"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "pdf-text-extractor"
+      Runtime: "python3.9"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/pdf-text-extractor"
+      RecursiveLoop: "Terminate"
+      Environment:
+        Variables:
+          DYNAMODB_TABLE: "OCR-Text-Extraction-Table"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  EC2NetworkInterfaceXm:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Retain"
+    Properties:
+      Description: "Interface for NAT Gateway nat-0f726eeb451a8141c"
+      PrivateIpAddress: "10.0.1.238"
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet: []
+      Ipv6Prefixes: []
+      SubnetId: "subnet-0a2e19098ff20e3cd"
+      SourceDestCheck: false
+      InterfaceType: "null"
+      Tags: []
+      PublicIpDnsNameOptions:
+        DnsHostnameType: "public-ipv4-dns-name"
+        PublicIpv4DnsName: "ec2-3-213-221-67.compute-1.amazonaws.com"
+  LogsLogStream20250920LATESTbc0425c3598244369cb663bd39622017:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]bc0425c3598244369cb663bd39622017"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1feeding"
+  XRayGroupGroupDefault:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::XRay::Group"
+    DeletionPolicy: "Retain"
+    Properties:
+      GroupName: "Default"
+      InsightsConfiguration:
+        InsightsEnabled: false
+        NotificationsEnabled: false
+      Tags: []
+  LogsLogStreamEcsocrcontainer95f0fb369ad544cbbd876c5fa8fd639e:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/95f0fb369ad544cbbd876c5fa8fd639e"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStream20250920LATEST7738f6e2506e4d81a484506ce8b961e4:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]7738f6e2506e4d81a484506ce8b961e4"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalenhancedocr"
+  ECSTaskDefinitionTaskdefinitionocrtaskdef14:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  ECSTaskDefinitionTaskdefinitionocrtaskdef15:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn: "arn:aws:iam::862070608712:role/ecsTaskRole"
+      ExecutionRoleArn: "arn:aws:iam::862070608712:role/ecsTaskExecutionRole"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  ECSTaskDefinitionTaskdefinitionocrtaskdef12:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  ECSTaskDefinitionTaskdefinitionocrtaskdef13:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  ECSTaskDefinitionTaskdefinitionocrtaskdef10:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  ECSTaskDefinitionTaskdefinitionocrtaskdef11:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ECS::TaskDefinition"
+    DeletionPolicy: "Retain"
+    Properties:
+      TaskRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskRoleForOCR"
+        - "Arn"
+      ExecutionRoleArn:
+        Fn::GetAtt:
+        - "IAMRoleECSTaskExecutionRoleForOCR"
+        - "Arn"
+      Volumes: []
+      InferenceAccelerators: []
+      Memory: "4096"
+      PlacementConstraints: []
+      ContainerDefinitions:
+      - ExtraHosts: []
+        Secrets: []
+        VolumesFrom: []
+        Cpu: 0
+        EntryPoint: []
+        DnsServers: []
+        Image: "862070608712.dkr.ecr.us-east-1.amazonaws.com/fargate-ocr-processor:latest"
+        Essential: true
+        LogConfiguration:
+          SecretOptions: []
+          Options:
+            awslogs-group: "/ecs/ocr-task-def"
+            awslogs-region: "us-east-1"
+            awslogs-stream-prefix: "ecs"
+          LogDriver: "awslogs"
+        ResourceRequirements: []
+        EnvironmentFiles: []
+        Name: "ocr-container"
+        MountPoints: []
+        DependsOn: []
+        DockerLabels: {}
+        PortMappings: []
+        DockerSecurityOptions: []
+        SystemControls: []
+        Command: []
+        DnsSearchDomains: []
+        Environment:
+        - Value: "us-east-1"
+          Name: "AWS_REGION"
+        - Value:
+            Ref: "DynamoDBTableOCRTextExtractionTable"
+          Name: "DYNAMODB_TABLE"
+        Links: []
+        CredentialSpecs: []
+        Ulimits: []
+      Cpu: "2048"
+      RequiresCompatibilities:
+      - "FARGATE"
+      Family: "ocr-task-def"
+      NetworkMode: "awsvpc"
+      Tags: []
+  EC2RouteVf:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Route"
+    DeletionPolicy: "Retain"
+    Properties:
+      RouteTableId: "rtb-09d72760e5016dd30"
+      DestinationCidrBlock: "10.0.0.0/16"
+      GatewayId: "local"
+      VpcEndpointId: "local"
+  LambdaPermissionFunctionmedpalenhancedocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionMedpalenhancedocr"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn:
+        Fn::GetAtt:
+        - "S3BucketTestingpdffilesmedpal"
+        - "Arn"
+      Principal: "s3.amazonaws.com"
+  MemoryDBParameterGroupDefaultmemorydbvalkey7:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::MemoryDB::ParameterGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      ParameterGroupName: "default.memorydb-valkey7"
+      Family: "memorydb_valkey7"
+      Description: "Default parameter group for memorydb_valkey7"
+  LogsLogStreamEcsocrcontainer66f37cabbe6845629e7aa20ff0e7a4bf:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/66f37cabbe6845629e7aa20ff0e7a4bf"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  EC2DHCPOptions:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::DHCPOptions"
+    DeletionPolicy: "Retain"
+    Properties:
+      DomainName: "ec2.internal"
+      DomainNameServers:
+      - "AmazonProvidedDNS"
+      Tags: []
+  IAMRoleTestrolek43sq4f2:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::862070608712:policy/service-role/AWSLambdaBasicExecutionRole-a5880315-9f77-4b25-9440-2ddaebc2cdb9"
+      MaxSessionDuration: 3600
+      RoleName: "test-role-k43sq4f2"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  ApiGatewayRestApi:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ApiGateway::RestApi"
+    DeletionPolicy: "Retain"
+    Properties:
+      ApiKeySourceType: "HEADER"
+      EndpointConfiguration:
+        IpAddressType: "ipv4"
+        Types:
+        - "REGIONAL"
+      DisableExecuteApiEndpoint: false
+      Name: "deepseek-medpal-api"
+  LogsLogStream20250920LATEST191024a05e9a4c47a489b9bdf8568631:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]191024a05e9a4c47a489b9bdf8568631"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdamedpalinstantocr"
+  LogsLogStreamEcsocrcontainer93a2e9dc251b4ea988d9adeb15ab43bf:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/93a2e9dc251b4ea988d9adeb15ab43bf"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStream20250920LATEST9ed48d076d4546bdbbbf3109c89dcde9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]9ed48d076d4546bdbbbf3109c89dcde9"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  LogsLogGroupawslambdagcpvisionocrprocessor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/gcp-vision-ocr-processor"
+      DataProtectionPolicy: {}
+  LogsLogStreamEcsocrcontainer56692053444c4647aa6e4756fb5319f1:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/56692053444c4647aa6e4756fb5319f1"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  EC2NetworkInterface:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Retain"
+    Properties:
+      SourceDestCheck: true
+      InterfaceType: "null"
+      Description: "EFS mount target for fs-0da4c118b1d225d86 (fsmt-0c1fb77e289d219b7)"
+      PrivateIpAddress: "10.0.2.203"
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0115c37b275260a65"
+      Ipv6Prefixes: []
+      SubnetId: "subnet-076514b43e1cac8ab"
+      Tags: []
+  IAMRoleDeekseekR1testrolenhczo754:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::862070608712:policy/service-role/AWSLambdaBasicExecutionRole-81f420b3-510d-4d4f-8c58-926df7863167"
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
+      MaxSessionDuration: 3600
+      RoleName: "deekseekR1-test-role-nhczo754"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource:
+            - "arn:aws:dynamodb:us-east-1:862070608712:table/medpal-history"
+            - "arn:aws:dynamodb:us-east-1:862070608712:table/OCR-Text-Extraction-Table"
+            Action:
+            - "dynamodb:Scan"
+            - "dynamodb:GetItem"
+            - "dynamodb:Query"
+            - "dynamodb:DescribeTable"
+            Effect: "Allow"
+          - Resource:
+            - "arn:aws:bedrock:us-east-1:862070608712:inference-profile/us.deepseek.r1-v1:0"
+            - "arn:aws:bedrock:us-east-1:862070608712:foundation-model/deepseek.deepseek-r1-v1:0"
+            Action:
+            - "bedrock:InvokeModel"
+            - "bedrock:ListFoundationModels"
+            Effect: "Allow"
+        PolicyName: "MedicalDataAnalyzerPolicy"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  IAMRoleMedpalsimpleocrrole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      MaxSessionDuration: 3600
+      RoleName: "medpal-simple-ocr-role"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:s3:::testing-pdf-files-medpal/*"
+            Action:
+            - "s3:GetObject"
+            - "s3:GetObjectMetadata"
+            Effect: "Allow"
+          - Resource: "arn:aws:dynamodb:us-east-1:*:table/OCR-Text-Extraction-Table"
+            Action:
+            - "dynamodb:PutItem"
+            - "dynamodb:GetItem"
+            - "dynamodb:UpdateItem"
+            Effect: "Allow"
+        PolicyName: "simple-ocr-policy"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  EventsRuleRuleS3PDFUploadTriggerOCR:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Events::Rule"
+    DeletionPolicy: "Retain"
+    Properties:
+      EventBusName:
+        Ref: "EventsEventBusDefault"
+      EventPattern:
+        detail-type:
+        - "Object Created"
+        source:
+        - "aws.s3"
+        detail:
+          bucket:
+            name:
+            - "testing-pdf-files-medpal"
+          object:
+            key:
+            - prefix: "medpal-uploads/"
+      State: "ENABLED"
+      Targets:
+      - Id: "Fargate-OCR-Task-Target"
+        Arn:
+          Fn::GetAtt:
+          - "ECSClusterOcrcluster"
+          - "Arn"
+        EcsParameters:
+          NetworkConfiguration:
+            AwsVpcConfiguration:
+              SecurityGroups:
+              - Fn::GetAtt:
+                - "EC2SecurityGroupEX"
+                - "GroupId"
+              Subnets:
+              - "subnet-0a2e19098ff20e3cd"
+              AssignPublicIp: "ENABLED"
+          EnableECSManagedTags: false
+          LaunchType: "FARGATE"
+          EnableExecuteCommand: false
+          TaskCount: 1
+          TaskDefinitionArn:
+            Ref: "ECSTaskDefinitionTaskdefinitionocrtaskdef14"
+        RoleArn:
+          Fn::GetAtt:
+          - "IAMRoleECSTaskExecutionRoleForOCR"
+          - "Arn"
+      Id: "S3-PDF-Upload-Trigger-OCR"
+      Tags: []
+      Name: "S3-PDF-Upload-Trigger-OCR"
+  LogsLogStream20250920LATESTb109a520fc7b4e3691e2294f1d589a0f:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/20/[$LATEST]b109a520fc7b4e3691e2294f1d589a0f"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdadeekseekR1feeding"
+  CloudFrontCachePolicyOn:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Default policy when compression is disabled"
+        MinTTL: 1
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "none"
+          EnableAcceptEncodingBrotli: false
+          HeadersConfig:
+            HeaderBehavior: "none"
+          CookiesConfig:
+            CookieBehavior: "none"
+          EnableAcceptEncodingGzip: false
+        DefaultTTL: 86400
+        Name: "Managed-CachingOptimizedForUncompressedObjects"
+  LambdaFunctionGcpvisionocrprocessor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 3008
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 900
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionGcpvisionocrprocessorCodeS3ObjectVersionTLPyS"
+        S3Bucket:
+          Ref: "LambdaFunctionGcpvisionocrprocessorCodeS3BucketSLhTl"
+        ZipFile:
+          Ref: "LambdaFunctionGcpvisionocrprocessorCodeZipFile0w4k7"
+        ImageUri:
+          Ref: "LambdaFunctionGcpvisionocrprocessorCodeImageUriaEgeR"
+        S3Key:
+          Ref: "LambdaFunctionGcpvisionocrprocessorCodeS3KeyKUhhT"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleLambdaGCPVisionOCRRole"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "gcp-vision-ocr-processor"
+      Runtime: "python3.9"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/gcp-vision-ocr-processor"
+      RecursiveLoop: "Terminate"
+      Environment:
+        Variables:
+          GCP_CREDENTIALS_BASE64: "ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAiY29yZGVkLWFjdG9yLTQ3MjgwMS1hNiIsCiAgInByaXZhdGVfa2V5X2lkIjogIjEyMTY2NDNiYjVmNGQyNjY1MWI3NmI4ZjVhYWEwZTQ4NDEyYTgzOTMiLAogICJwcml2YXRlX2tleSI6ICItLS0tLUJFR0lOIFBSSVZBVEUgS0VZLS0tLS1cbk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRRHpHdWJJdzUvQVZwUFRcbnZ3UEFWSnQzd3RycCttb3QzTi95SE1SSldyL3pvSWw0Qm5PZkYvaW1WK2toVDVJUThWL2NZVGRzYitvaTBacmRcbmJOSlhveDNPTzRhRDhaZVEzZDJkWENOb0dUYzFjOEJEaEEzTGVMQjVPS3Zoa09sU2w4NkZsSGpHcVZsY2tWZERcbmZIZjhURE1tczcrcmdNMmpLK0hVeEhMTXJWc2tieGVlOTVMRlJqUldkMjJPYzlSQTlnZ1NsYVg3aU5CVEZ1ZDFcbm1oZHNtZXpBd0JIc0FDa2FDZ0o3U0pzZkJyNHltQ0tLT0pFdTNBdEt1MHpZRXpoSVNoeVNKOXpuZytaUDJQMWJcbklZVDJRYTR2dTNNQXRPU1I4ZzJxVi9lZmJ2cFhiU2F0aTZuMjhseEkvZ1NIenFrcGk3cGVCc2o2bGQ1VzNDMUNcbk10RmI0OHBOQWdNQkFBRUNnZ0VBRVh6MWJpclljcU1ueGpzKy8xWjJ5cUk3VWtxZjJjWENYRzNpVnU2TzBXMVNcbmhrNWNnZXpkQjhaYU1IbkRaYkdmZGtDT0ZxQmtaUFhVSUtxajVRY0liVjROMnE4RityZGpLbDlHOHNXaG1aaEdcbmsvVExjMEF1M2NHTVo5RWZYOEFvN0tZV0hDQnhtNzJlMisxM3lqQUhHL2toU0NxZllHWVhQRkdYZW83YitCNWJcbjIrUE9WR3ZqaHpaV1BnT3U0NHc0RjZnUkxXTHRNUWVUc2UzNGZGc2hHL0NDTFdGM2tzaHFvd0kzVTRnamF4WElcbllVeExYZDZsQ3Z1V2dKMTNUV1RjSHl5RWxqajdzeVhPM0tTM1gzTUFscXVHSXhReU5sSW55MTlPZUhNYWdsSU1cbjlkdnh2MEFqM1VGRzFtR1ZqbnBqckIzdTd3SzE3UllYdG9kU2FabE44UUtCZ1FEK2M1TmVXeVJldUpDL0NKL2xcbmQrcDR1WXJVV21HcFJFVis2eXk1aU5rM3JCOGFyZlliR3lDdERPSVYrTENMMGsxY1NQR29EK2puNkJCeWdlL1Zcbm41UnFQclB2M0pxdWdwZzVadHU1YkY1VWdGN2RiMmhaUFBwUG5iYlRaT3FIS0ZBUUhMRk0rOHdZV1V4VGljdmZcbkpPdVBJb05ISWNINXRWMUp6Z1lnaTd1dzlRS0JnUUQwbGFZUE5OTUZHTjgrdWRvUzc5MDc1UVU4SklBWHVHbEdcblc3Rk5KYmpCRThmZHBVaXhYMkNBSzN1bTZVY1RxRFBIc0llRTlHQ2oyb2RlUnB3bmdaUFA2ditFdnM0U2FLSTFcbkVKMEFPblFCUmpySzZZdmxyK2EyZ0FNK2VCQWo3NzNiV3lDMExWdEJxVkFidGg4SFg5T09Zb3pSSisrUUNxWE9cblJSOEppMlo4K1FLQmdHOFZmOW1xaW9jN3BoMXdJM1luVXRxZmplZEZDZXUrbldSYVFTMUNmQ29jMzN0alJOVHlcbmsrSlloSDg1RWNJSTdyTUNPVlc0bEdKaDRvUkxDNnhFUGFQZ2VlZVdkSVVKQ0hITzRNL2phbzhUZDliT0kwMEtcbkhQRVRGbFRWY3JuTXRKOUVGM2RYV2ZPclVISUw3MUFjcXlYUzJHTCtidE9ZQlFFS2k0dzcxSlhkQW9HQUtCakFcbmVJMjRhb1dCVTg4MEtSYVp0ay85WTdhNEtTdGFWdWFCVXB4MGhYS3d1VzEzVlZ6RmZUMmpyK0ZlZmFKOW1xY2VcbkVIWGZ3Zno1WkVNL0pscmYySjQxOVpVeVEySlQ5VThiN2dXbkx1NU1oU2QwZjlzdWY0ek0rMWpEaktDcEIyVVJcbkgzaXdGVHVrbm1aay85aDkza0haeEJBLy9lVkErV2ZyaHEwTHlFRUNnWUVBKzFzS3BLbXdrMzRCeFNmWmpJZkJcbmMzNHBQTXV1L0hrQUJjazJLQjI0TFkxZVdjMDBpc3JHOUhrUUtWcjJ2QzBjcFdwWG54Z2xkc0FiaWdMNW5VV2ZcbjRvZFNKKzJVeXFZcFd4OFZmVTdoVHlpSitpV24vaGRLRHdxNDhFVmhLMzhyU241UFNwVm5TdEZiWjJuMlpSTHJcbldxUlprNmxQbXc3Sk9reDQzdmNTOGtrPVxuLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLVxuIiwKICAiY2xpZW50X2VtYWlsIjogIm1lZHBhbC12aXNpb24tb2NyQGNvcmRlZC1hY3Rvci00NzI4MDEtYTYuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLAogICJjbGllbnRfaWQiOiAiMTA3OTUzMDMzMTMwNTQ5MDEwOTYyIiwKICAiYXV0aF91cmkiOiAiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL28vb2F1dGgyL2F1dGgiLAogICJ0b2tlbl91cmkiOiAiaHR0cHM6Ly9vYXV0aDIuZ29vZ2xlYXBpcy5jb20vdG9rZW4iLAogICJhdXRoX3Byb3ZpZGVyX3g1MDlfY2VydF91cmwiOiAiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vb2F1dGgyL3YxL2NlcnRzIiwKICAiY2xpZW50X3g1MDlfY2VydF91cmwiOiAiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vcm9ib3QvdjEvbWV0YWRhdGEveDUwOS9tZWRwYWwtdmlzaW9uLW9jciU0MGNvcmRlZC1hY3Rvci00NzI4MDEtYTYuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLAogICJ1bml2ZXJzZV9kb21haW4iOiAiZ29vZ2xlYXBpcy5jb20iCn0K"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  LambdaFunctionMedpalinstantocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 512
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 120
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        S3ObjectVersion:
+          Ref: "LambdaFunctionMedpalinstantocrCodeS3ObjectVersionqC4xf"
+        S3Bucket:
+          Ref: "LambdaFunctionMedpalinstantocrCodeS3BucketuiJtT"
+        ZipFile:
+          Ref: "LambdaFunctionMedpalinstantocrCodeZipFilejzLgf"
+        ImageUri:
+          Ref: "LambdaFunctionMedpalinstantocrCodeImageUriNEHbc"
+        S3Key:
+          Ref: "LambdaFunctionMedpalinstantocrCodeS3KeyxJAwa"
+      Role:
+        Fn::GetAtt:
+        - "IAMRoleMedpaltesseractlambdarole"
+        - "Arn"
+      FileSystemConfigs: []
+      FunctionName: "medpal-instant-ocr"
+      Runtime: "python3.9"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/medpal-instant-ocr"
+      RecursiveLoop: "Terminate"
+      Environment:
+        Variables:
+          DYNAMODB_TABLE_NAME: "OCR-Text-Extraction-Table"
+          S3_BUCKET_NAME: "testing-pdf-files-medpal"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"
+  Route53ResolverResolverRuleAssociation:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Route53Resolver::ResolverRuleAssociation"
+    DeletionPolicy: "Retain"
+    Properties:
+      VPCId: "vpc-0ae95c8413b473ab9"
+      ResolverRuleId: "rslvr-autodefined-rr-internet-resolver"
+      Name: "System Rule Association"
+  IAMRoleAWSServiceRoleForECS:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/ecs.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/AmazonECSServiceRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForECS"
+      Description: "Policy to enable Amazon ECS to manage your EC2 instances and related\
+        \ resources."
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "ecs.amazonaws.com"
+  MemoryDBParameterGroupDefaultmemorydbredis7search:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::MemoryDB::ParameterGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      ParameterGroupName: "default.memorydb-redis7.search"
+      Family: "memorydb_redis7"
+      Description: "Customized default parameter group for memorydb_redis7 with search-enabled\
+        \ yes"
+  LogsLogGroupawslambdapaddleocrprocessor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/paddleocr-processor"
+      DataProtectionPolicy: {}
+  CloudFrontCachePolicyAq:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Policy for origins that return Cache-Control headers and serve different\
+          \ content based on values present in the query string."
+        MinTTL: 0
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "all"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "whitelist"
+            Headers:
+            - "x-method-override"
+            - "origin"
+            - "host"
+            - "x-http-method"
+            - "x-http-method-override"
+          CookiesConfig:
+            CookieBehavior: "all"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 0
+        Name: "UseOriginCacheControlHeaders-QueryStrings"
+  EC2SubnetNetworkAclAssociationYs:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Retain"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl"
+      SubnetId: "subnet-0a2e19098ff20e3cd"
+  LogsLogStreamEcsocrcontainera55a364e400142c88d2c25a6477c07b2:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/a55a364e400142c88d2c25a6477c07b2"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStreamEcsocrcontainer6e0f3062504c4ae1be3772201a892a79:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/6e0f3062504c4ae1be3772201a892a79"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogStream20250921LATEST6919be6b13a9418fb5228aa1a4232fb0:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "2025/09/21/[$LATEST]6919be6b13a9418fb5228aa1a4232fb0"
+      LogGroupName:
+        Ref: "LogsLogGroupawslambdagcpvisionocrprocessor"
+  S3BucketMedpalgreatai:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::Bucket"
+    DeletionPolicy: "Retain"
+    Properties:
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        BlockPublicAcls: true
+      BucketName: "medpal-greatai"
+      OwnershipControls:
+        Rules:
+        - ObjectOwnership: "BucketOwnerEnforced"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+        - BucketKeyEnabled: true
+          ServerSideEncryptionByDefault:
+            SSEAlgorithm: "AES256"
+  LogsLogStreamEcsocrcontainerf1758daafd6b4323bf7c3e3346946c82:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogStream"
+    DeletionPolicy: "Retain"
+    Properties:
+      LogStreamName: "ecs/ocr-container/f1758daafd6b4323bf7c3e3346946c82"
+      LogGroupName:
+        Ref: "LogsLogGroupecsocrtaskdef"
+  LogsLogGroupawslambdamedpalenhancedocr:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Logs::LogGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      FieldIndexPolicies: []
+      LogGroupClass: "STANDARD"
+      LogGroupName: "/aws/lambda/medpal-enhanced-ocr"
+      DataProtectionPolicy: {}
+  IAMRoleTRYroledfhgaaxi:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::862070608712:policy/service-role/AWSLambdaBasicExecutionRole-192189ba-ed8b-4b67-8fa3-b5aae0b122cf"
+      MaxSessionDuration: 3600
+      RoleName: "TRY-role-dfhgaaxi"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  CloudFrontCachePolicyAS:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudFront::CachePolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      CachePolicyConfig:
+        Comment: "Policy with caching enabled. Supports Gzip and Brotli compression."
+        MinTTL: 1
+        MaxTTL: 3.1536E7
+        ParametersInCacheKeyAndForwardedToOrigin:
+          QueryStringsConfig:
+            QueryStringBehavior: "none"
+          EnableAcceptEncodingBrotli: true
+          HeadersConfig:
+            HeaderBehavior: "none"
+          CookiesConfig:
+            CookieBehavior: "none"
+          EnableAcceptEncodingGzip: true
+        DefaultTTL: 86400
+        Name: "Managed-CachingOptimized"
+  LambdaPermissionFunctiondeekseekR1test:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName:
+        Fn::GetAtt:
+        - "LambdaFunctionDeekseekR1test"
+        - "Arn"
+      Action: "lambda:InvokeFunction"
+      SourceArn: "arn:aws:execute-api:us-east-1:862070608712:ev559asb3h/*/POST/analyze-medical-data"
+      Principal: "apigateway.amazonaws.com"
+  IAMRoleOcrpaddlerole0h4p8po9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::862070608712:policy/service-role/AWSLambdaBasicExecutionRole-6f654837-dd0b-42ad-9402-13469a9ee9ac"
+      MaxSessionDuration: 3600
+      RoleName: "ocrpaddle-role-0h4p8po9"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  IAMManagedPolicyPolicyserviceroleAWSLambdaBasicExecutionRoleeda111b0c2864b95a43f5b9e2da54957:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "AWSLambdaBasicExecutionRole-eda111b0-c286-4b95-a43f-5b9e2da54957"
+      Path: "/service-role/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:logs:us-east-1:862070608712:*"
+          Action: "logs:CreateLogGroup"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:logs:us-east-1:862070608712:log-group:/aws/lambda/deekseekR1-feeding:*"
+          Action:
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRoleDeekseekR1feedingrolensxstky6"
+      Users: []
+  IAMRoleAWSServiceRoleForSupport:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/aws-service-role/support.amazonaws.com/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+      MaxSessionDuration: 3600
+      RoleName: "AWSServiceRoleForSupport"
+      Description: "Enables resource access for AWS to provide billing, administrative\
+        \ and support services"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "support.amazonaws.com"
